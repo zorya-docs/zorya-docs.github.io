@@ -21,6 +21,10 @@ export const headerData = {
           text: 'Personal',
           href: getPermalink('/homes/personal'),
         },
+        {
+          text: 'Minutes',
+          href: getPermalink('/minutes'),
+        },
       ],
     },
     {
@@ -114,6 +118,10 @@ export const headerData = {
       text: 'Widgets',
       href: '#',
     },
+    {
+      text: 'Minutes',
+      href: getPermalink('/minutes'),
+    }
   ],
   actions: [{ text: 'Download', href: 'https://github.com/onwidget/astrowind', target: '_blank' }],
 };

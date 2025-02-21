@@ -1,0 +1,32 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+
+const metadata = {
+  title: 'Minutes',
+};
+
+const minutes = await getCollection('minutes');
+---
+
+<Layout metadata={metadata}>
+  <HeroText title="Minutes" />
+
+  <section class="max-w-6xl mx-auto m-9">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {
+        minutes.map((meeting) => (
+          <a
+            href={`/minutes/${meeting.id}`}
+            class="block bg-muted/80 hover:bg-muted/90 shadow-sm hover:shadow-primary 
+         p-6 py-8 rounded-2xl border border-gray 
+         transition-all duration-300 transform hover:-translate-y-1"
+          >
+            {meeting.id}
+          </a>
+        ))
+      }
+    </div>
+  </section>
+</Layout>
