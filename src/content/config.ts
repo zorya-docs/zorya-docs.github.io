@@ -72,8 +72,16 @@ const minutesCollection = defineCollection({
   }),
 });
 
+const eventsCollection = defineCollection({
+  loader: glob({ pattern: ['*.md', '*.mdx'], base: 'src/data/calendar' }),
+  schema: z.object({
+    date: z.date().optional(),
+  }),
+});
+
 
 export const collections = {
   post: postCollection,
   minutes: minutesCollection,
+  events: eventsCollection,
 };

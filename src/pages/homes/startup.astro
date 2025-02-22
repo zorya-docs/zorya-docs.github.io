@@ -14,7 +14,7 @@ import Brands from '~/components/widgets/Brands.astro';
 import { YouTube } from 'astro-embed';
 
 const metadata = {
-  title: 'Startup Landing Page',
+  title: 'Home',
 };
 ---
 
@@ -22,27 +22,24 @@ const metadata = {
   <!-- Hero Widget ******************* -->
 
   <Hero
-    tagline="Startup Web Demo"
+    tagline="Pathology Unified Learning & Storage Engine"
     actions={[
       {
         variant: 'primary',
         target: '_blank',
-        text: 'Get templates',
-        href: 'https://github.com/onwidget/astrowind',
-        icon: 'tabler:download',
+        text: 'Get Started',
+        href: 'https://github.com/bioinformatics-ua/PathoWorkflow',
+        // icon: 'tabler:download',
       },
       { text: 'Learn more', href: '#features' },
     ]}
   >
     <Fragment slot="title">
-      Improve <span class="hidden sm:inline">the online presence of</span> your <span
-        class="text-accent dark:text-white highlight">Startup</span
-      > with Astrowind templates
+      The Beating Heart of AI-Enhanced Medical Research
     </Fragment>
 
     <Fragment slot="subtitle">
-      Step into the spotlight with <span class="font-semibold">Astrowind</span> templates, your pathway to fortifying your
-      startup's digital footprint, fostering credibility, and expanding your reach.
+      PULSE is a Web Platform for data lakes and exploration of artificial intelligence for Digital Pathology.
     </Fragment>
 
     <Fragment slot="image">
