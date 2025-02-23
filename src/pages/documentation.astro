@@ -1,0 +1,71 @@
+---
+import { getCollection, getEntry, render } from 'astro:content';
+import Layout from '~/layouts/PageLayout.astro';
+
+const { slug } = Astro.params;  
+
+// if (!milestone) {
+//   throw new Error(`No such minute yet: ${slug}`);
+// }
+
+// const { Content } = await render(milestone);
+
+const milestones = [
+  {
+    id: 'milestone1',
+    title: 'Milestone 1',
+    topics: ['Topic A', 'Topic B', 'Topic C']
+  },
+  {
+    id: 'milestone2',
+    title: 'Milestone 2',
+    topics: ['Topic D', 'Topic E', 'Topic F']
+  },
+  {
+    id: 'milestone3',
+    title: 'Milestone 3',
+    topics: ['Topic G', 'Topic H', 'Topic I']
+  },
+  {
+    id: 'milestone4',
+    title: 'Milestone 4',
+    topics: ['Topic J', 'Topic K', 'Topic L']
+  }
+];
+---
+
+<Layout>
+  <div class="flex max-w-5xl mx-auto mt-6 p-4 bg-muted/80 dark:bg-muted/90 rounded-xl transition-all">
+    <!-- Sidebar -->
+    <aside class="w-1/5 p-4 border-r border-gray-300 dark:border-gray-700">
+      <h2 class="text-lg text-customGreen2 font-bold mb-4">Milestones</h2>
+      <ul>
+        {milestones.map((milestone) => (
+          <li class="mb-2">
+            <details>
+              <summary class="cursor-pointer dark:text-customGreen3 hover:underline">{milestone.title}</summary>
+              <ul class="ml-4 mt-2">
+                {milestone.topics.map((topic) => (
+                  <li class="mb-1">
+                    <a href={`#${topic.replace(/\s+/g, '-').toLowerCase()}`} class="text-sm dark:text-customGreen3 hover:underline">
+                      {topic}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </details>
+          </li>
+        ))}
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <section class="w-3/4 px-4">
+      <div
+        class="mx-auto px-4 sm:px-4 max-w-2xl prose prose-sm lg:prose-md dark:prose-invert dark:prose-headings:text-slate-300 prose-headings:font-heading prose-headings:leading-tight prose-headings:tracking-tight prose-headings:font-bold prose-a:text-primary dark:prose-a:text-blue-400 prose-img:rounded-md prose-img:shadow-lg mt-6 prose-headings:scroll-mt-[60px] prose-li:my-0"
+      >
+        <!-- <Content /> -->
+      </div>
+    </section>
+  </div>
+</Layout>
