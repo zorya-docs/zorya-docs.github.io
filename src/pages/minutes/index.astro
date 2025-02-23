@@ -7,26 +7,57 @@ const metadata = {
   title: 'Minutes',
 };
 
-const minutes = await getCollection('minutes');
+const advisoryMinutes = await getCollection('advisors_minutes');
+const groupMinutes = await getCollection('group_minutes');
+
 ---
 
 <Layout metadata={metadata}>
   <HeroText title="Minutes" />
 
   <section class="max-w-6xl mx-auto m-9">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-      {
-        minutes.map((meeting) => (
+    <div class="space-y-12">
+      {/* Advisory Minutes */}
+      <div>
+        <h2 class="text-2xl font-semibold mb-4">Advisors Minutes</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {advisoryMinutes.length > 0 ? (
+            advisoryMinutes.map((meeting) => (
           <a
-            href={`/minutes/${meeting.id}`}
-            class="block bg-muted/80 hover:bg-muted/90 shadow-sm hover:shadow-primary 
-         p-6 py-8 rounded-2xl border border-gray 
-         transition-all duration-300 transform hover:-translate-y-1"
+            href={`/minutes/advisors_minutes/${meeting.id}`}
+            class="block bg-muted/80 hover:bg-muted/90 shadow-sm hover:shadow-customGreen2 p-6 py-10 rounded-2xl border-[3px] border-customGreen2 text-customGreen2 hover:border-customGreen1 hover:text-customGreen2 dark:border-white dark:text-white dark:hover:border-red-500 dark:hover:text-red-500 text-xl transition-all duration-300 transform hover:-translate-y-1"
           >
-            {meeting.id}
+            📑 Minute {meeting.id}
           </a>
-        ))
-      }
+
+
+            ))
+          ) : (
+            <p class="col-span-full text-center text-gray-500">No advisors minutes available.</p>
+          )}
+        </div>
+      </div>
+  
+      {/* Group Minutes */}
+      <div>
+        <h2 class="text-2xl font-semibold mb-4">Group Minutes</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {groupMinutes.length > 0 ? (
+            groupMinutes.map((meeting) => (
+            <a
+              href={`/minutes/advisors_minutes/${meeting.id}`}
+              class="block bg-muted/80 hover:bg-muted/90 shadow-sm hover:shadow-customGreen2 p-6 py-10 rounded-2xl border-[3px] border-customGreen2 text-customGreen2 hover:border-customGreen1 hover:text-customGreen2 dark:border-white dark:text-white dark:hover:border-red-500 dark:hover:text-red-500 text-xl transition-all duration-300 transform hover:-translate-y-1"
+              >
+              📑 Minute {meeting.id}
+            </a>
+
+            ))
+          ) : (
+            <p class="col-span-full text-center text-gray-500">No group minutes available.</p>
+          )}
+        </div>
+      </div>
     </div>
   </section>
+  
 </Layout>

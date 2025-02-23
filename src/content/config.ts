@@ -72,8 +72,16 @@ const minutesCollection = defineCollection({
   }),
 });
 
-const eventsCollection = defineCollection({
-  loader: glob({ pattern: ['*.md', '*.mdx'], base: 'src/data/calendar' }),
+const minutesAdvisorsCollection = defineCollection({
+  loader: glob({ pattern: ['*.md', '*.mdx'], base: 'src/data/minutes/advisors_minutes' }),
+  schema: z.object({
+    date: z.date().optional(),
+    title: z.string().optional(),
+  }),
+});
+
+const minutesGroupCollection = defineCollection({
+  loader: glob({ pattern: ['*.md', '*.mdx'], base: 'src/data/minutes/group_minutes' }),
   schema: z.object({
     date: z.date().optional(),
   }),
@@ -83,5 +91,6 @@ const eventsCollection = defineCollection({
 export const collections = {
   post: postCollection,
   minutes: minutesCollection,
-  events: eventsCollection,
+  advisors_minutes: minutesAdvisorsCollection,
+  group_minutes: minutesGroupCollection,
 };
