@@ -69,6 +69,8 @@ const minutesCollection = defineCollection({
   loader: glob({ pattern: ['*.md', '*.mdx'], base: 'src/data/minutes' }),
   schema: z.object({
     date: z.date().optional(),
+    title: z.string().optional(),
+    id: z.number().optional(),
   }),
 });
 
@@ -77,6 +79,7 @@ const minutesAdvisorsCollection = defineCollection({
   schema: z.object({
     date: z.date().optional(),
     title: z.string().optional(),
+    id: z.number().optional(),
   }),
 });
 

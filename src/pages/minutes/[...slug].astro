@@ -1,7 +1,7 @@
 ---
 import { getCollection, getEntry, render } from 'astro:content';
 import Layout from '~/layouts/PageLayout.astro';
-import HeroText from '~/components/widgets/HeroText.astro';
+// import HeroText from '~/components/widgets/HeroText.astro';
 
 export async function getStaticPaths() {
   const advisorsMinutes = await getCollection('advisors_minutes');
@@ -22,7 +22,10 @@ const { slug } = Astro.params;
 const [category, minuteId] = slug.split('/') as ['advisors_minutes' | 'group_minutes', string];
 
 const minute = await getEntry(category, minuteId);  
-const allMinutes = await getCollection(category);  
+
+const groupMinutes = await getCollection('group_minutes');
+const advisorsMinutes = await getCollection('advisors_minutes');
+
 
 if (!minute) {
   throw new Error(`No such minute yet: ${slug}`);
@@ -38,7 +41,7 @@ const { Content } = await render(minute);  // Renderiza o conteúdo do minuto
     <aside class="w-1/5 p-4 border-r border-gray-300 dark:border-gray-700">
       <h2 class="text-lg text-customGreen2 font-bold mb-4">Advisors Minutes</h2>
       <ul>
-        {allMinutes.map((min: { id: string }) => (
+        {advisorsMinutes.map((min: { id: string }) => (
           <li class="mb-2">
             <a href={`/minutes/advisors_minutes/${min.id}`} class="dark:text-customGreen3 hover:underline">
               Minute {min.id}
@@ -48,6 +51,23 @@ const { Content } = await render(minute);  // Renderiza o conteúdo do minuto
         ))}
       </ul>
       <h2 class="text-lg text-customGreen2 font-bold mb-4">Group Minutes</h2>
+      <ul>
+      {groupMinutes.length > 0 ? (
+            groupMinutes.map((min : {id:string}) => (
+
+          <li class="mb-2">
+            <a href={`/minutes/group_minutes/${min.id}`} class="dark:text-customGreen3 hover:underline">
+              Minute {min.id}
+            </a>
+          </li>
+
+            ))
+          ) : (
+            <p class="col-span-full text-center text-gray-500">No advisors minutes available.</p>
+          )}
+          </ul>
+
+
 
     </aside>
 
