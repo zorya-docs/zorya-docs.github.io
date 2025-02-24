@@ -87,6 +87,8 @@ const minutesGroupCollection = defineCollection({
   loader: glob({ pattern: ['*.md', '*.mdx'], base: 'src/data/minutes/group_minutes' }),
   schema: z.object({
     date: z.date().optional(),
+    title: z.string().optional(),
+    id: z.number().optional(),
   }),
 });
 

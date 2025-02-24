@@ -15,7 +15,10 @@ export default {
         customGreen1:'#455a64ff', //more darker
         customGreen2:'#76aaa7ff',
         customGreen3:'#a4e4e0ff',
-        customGreen4:'5bcec7ff', //more lighter        
+        customGreen4:'5bcec7ff', //more lighter
+        green1: '#64CCC5',
+        green2: '#DAFFFB', 
+        blue1: '#176B87',       
       },
       fontFamily: {
         sans: ['var(--aw-font-sans, ui-sans-serif)', ...defaultTheme.fontFamily.sans],
