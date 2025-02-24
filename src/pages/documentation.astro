@@ -10,16 +10,20 @@ const { slug } = Astro.params;
 
 // const { Content } = await render(milestone);
 
+const metadata = {
+  title: 'Documentation',
+};
+
 const milestones = [
   {
     id: 'milestone1',
     title: 'Milestone 1',
-    topics: ['Topic A', 'Topic B', 'Topic C']
+    topics: ['Introduction', 'State of the Art', 'Presentation']
   },
   {
     id: 'milestone2',
     title: 'Milestone 2',
-    topics: ['Topic D', 'Topic E', 'Topic F']
+    topics: ['Topic D', 'Topic E', 'Presentation']
   },
   {
     id: 'milestone3',
@@ -34,7 +38,7 @@ const milestones = [
 ];
 ---
 
-<Layout>
+<Layout metadata={metadata}>
   <div class="flex max-w-5xl mx-auto mt-6 p-4 bg-muted/80 dark:bg-muted/90 rounded-xl transition-all">
     <!-- Sidebar -->
     <aside class="w-1/5 p-4 border-r border-gray-300 dark:border-gray-700">
