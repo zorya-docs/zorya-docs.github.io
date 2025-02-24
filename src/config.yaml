@@ -1,6 +1,6 @@
 site:
   name: Zorya
-  site: 'https://astrowind.vercel.app'
+  site: 'https://PI-DigitalPathology.github.io'
   base: '/'
   trailingSlash: false
 
