@@ -24,7 +24,7 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
 export default defineConfig({
   output: 'static',
   site: 'https://PI-DigitalPathology.github.io',
-  base: '/',
+  base: '/Docs/',
 
   integrations: [
     tailwind({
