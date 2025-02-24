@@ -1,6 +1,6 @@
 site:
   name: Zorya
-  site: 'https://PI-DigitalPathology.github.io'
+  site: 'https://zorya-docs.github.io'
   base: '/'
   trailingSlash: false
 

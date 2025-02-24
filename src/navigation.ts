@@ -23,7 +23,7 @@ export const headerData = {
       href: getPermalink('/about'),
     }
   ],
-  actions: [{ text: 'GitHub', href: 'https://github.com/PI-DigitalPathology/Docs', target: '_blank' }],
+  actions: [{ text: 'GitHub', href: 'https://github.com/zorya-docs/zorya-docs.github.io', target: '_blank' }],
 };
 
 export const footerData = {

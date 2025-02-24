@@ -23,7 +23,7 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
 
 export default defineConfig({
   output: 'static',
-  site: 'https://PI-DigitalPathology.github.io',
+  site: 'https://zorya-docs.github.io',
   base: '/',
 
   integrations: [
