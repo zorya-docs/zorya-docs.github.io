@@ -6,76 +6,6 @@ const metadata = {
   title: 'Calendar',
 };
 
-const events = [
-  {
-    id: 'event-1',
-    startDate: '2025-02-22',
-    dueDate: '2025-02-28',
-    modules: 'Module 1',
-    tasks: 'Task 1, Task 2',
-    phases: 'Phase 1',
-    state: 'To Do'
-  },
-  {
-    id: 'event-2',
-    startDate: '2025-03-01',
-    dueDate: '2025-03-05',
-    modules: 'Module 2',
-    tasks: 'Task 3, Task 4',
-    phases: 'Phase 2',
-    state: 'In Progress'
-  },
-  {
-    id: 'event-3',
-    startDate: '2025-03-06',
-    dueDate: '2025-03-10',
-    modules: 'Module 3',
-    tasks: 'Task 5, Task 6',
-    phases: 'Phase 3',
-    state: 'Completed'
-  },
-  {
-    id: 'event-4',
-    startDate: '2025-03-11',
-    dueDate: '2025-03-15',
-    modules: 'Module 4',
-    tasks: 'Task 7, Task 8',
-    phases: 'Phase 4',
-    state: 'To Do'
-  },
-  {
-    id: 'event-5',
-    startDate: '2025-03-16',
-    dueDate: '2025-03-20',
-    modules: 'Module 5',
-    tasks: 'Task 9, Task 10',
-    phases: 'Phase 5',
-    state: 'In Progress'
-  },
-  {
-    id: 'event-6',
-    startDate: '2025-03-21',
-    dueDate: '2025-03-25',
-    modules: 'Module 6',
-    tasks: 'Task 11, Task 12',
-    phases: 'Phase 6',
-    state: 'Completed'
-  }
-];
-
-// Function to determine the class for the state
-const getStateClass = (state) => {
-  switch (state) {
-    case 'To Do':
-      return 'bg-red-200 text-red-800'; // Yellow for "To Do"
-    case 'In Progress':
-      return 'bg-yellow-200 text-yellow-800'; // Blue for "In Progress"
-    case 'Completed':
-      return 'bg-green-200 text-green-800'; // Green for "Completed"
-    default:
-      return 'bg-gray-200 text-gray-800'; // Default for other states
-  } 
-};
 --- 
 
 <Layout metadata={metadata}> 
@@ -85,35 +15,5 @@ const getStateClass = (state) => {
 
   <iframe src="https://lyrical-find-d86.notion.site/ebd/1a1b85a550b4800c8427ffb57b09da1c?v=1a1b85a550b48006b20f000c1b2ebdb3
   " width="100%" height="800px" style="border:none;"></iframe>
-    <!-- <table class="table-auto w-full border-collapse border border-gray-300">
-      <thead>
-        <tr>
-          <th class="px-4 py-2 border border-gray-300">Start Date</th>   
-          <th class="px-4 py-2 border border-gray-300">Due Date</th>
-          <th class="px-4 py-2 border border-gray-300">Modules</th>
-          <th class="px-4 py-2 border border-gray-300">Tasks</th>
-          <th class="px-4 py-2 border border-gray-300">Phases</th>
-          <th class="px-4 py-2 border border-gray-300">State</th>
-        </tr>
-      </thead>
-      <tbody>
-        {events.map(event => (
-          <tr id={event.id}>
-            <td class="px-4 py-2 border border-gray-300">{event.startDate}</td>
-            <td class="px-4 py-2 border border-gray-300">{event.dueDate}</td>
-            <td class="px-4 py-2 border border-gray-300">
-              <span class="inline-block bg-blue-200 text-blue-800 text-xs px-2 py-1 rounded">{event.modules}</span>
-            </td>
-            <td class="px-4 py-2 border border-gray-300">{event.tasks}</td>
-            <td class="px-4 py-2 border border-gray-300">{event.phases}</td>
-            <td class="px-4 py-2 border border-gray-300">
-              <span class={`inline-block text-xs px-2 py-1 rounded ${getStateClass(event.state)}`}>
-                {event.state}
-              </span>
-            </td>
-          </tr>
-        ))}
-      </tbody>
-    </table> -->
   </section>
 </Layout>
