@@ -1,6 +1,6 @@
 ---
 id: 1
-title: Minute 1
+title: Minute 1 - 18/02
 ---
 
 # Minute 1 - 18/02, 11:30 - Online

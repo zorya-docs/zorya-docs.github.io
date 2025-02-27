@@ -41,29 +41,28 @@ const { Content } = await render(minute);  // Renderiza o conteúdo do minuto
     <aside class="w-1/55 p-4 border-r border-gray-300 dark:border-gray-700">
       <h2 class="text-lg text-green1 font-bold mb-4">Supevisors Minutes</h2>
       <ul>
-        {advisorsMinutes.map((min) => (
+        {advisorsMinutes.slice().reverse().map((min) => (
           <li class="mb-2">
-            <a href={`/minutes/advisors_minutes/${min.id}`} class="dark:text-customGreen3 hover:underline">
-              {min.data.title}
-            </a>
+        <a href={`/minutes/advisors_minutes/${min.id}`} class="dark:text-customGreen3 hover:underline">
+          {min.data.title}
+        </a>
           </li>
-
         ))}
       </ul>
       <h2 class="text-lg text-green1 font-bold mt-4 mb-4">Team Minutes</h2>
       <ul>
       {groupMinutes.length > 0 ? (
-            groupMinutes.map((min) => (
+        groupMinutes.slice().reverse().map((min) => (
 
           <li class="mb-2">
-            <a href={`/minutes/group_minutes/${min.id}`} class="dark:text-customGreen3 hover:underline">
-              {min.data.title}
-            </a>
+        <a href={`/minutes/group_minutes/${min.id}`} class="dark:text-customGreen3 hover:underline">
+          {min.data.title}
+        </a>
           </li>
 
-            ))
+        ))
           ) : (
-            <p class="col-span-full text-center text-gray-500">No advisors minutes available.</p>
+        <p class="col-span-full text-center text-gray-500">No team minutes available.</p>
           )}
           </ul>
 
