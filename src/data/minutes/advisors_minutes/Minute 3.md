@@ -34,7 +34,6 @@ Carolina, Diogo, João, Raquel, Henrique, Supervisor Carlos Costa
    - Visualization tool to consume annotations.
    - Multiple databases possible: metadata DB, annotation DB, algorithm DB.
    - Scalable services (5 to 50 APIs possible, normalized in QuPath).
-   - Request images from Prof. Bastião via email.
    - **DICOM images in Dicoogle** allow multi-level API usage (layers ≠ Kaapana layers).
    - Ability to select an area and run algorithm(s).
    - Prof. Carlos Costa presented a PathoBox video showcasing image selection and annotation.
