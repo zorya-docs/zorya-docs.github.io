@@ -1,12 +1,12 @@
 ---
 id: 2
 date: 2025-10-10
-title: Minute 2
+title: Minute 2 - 20/02
 ---
 
 # Minute 2 - 20/02, 9:00 - IEETA
 
-**Attendees:** Carolina, Diogo, João, Raquel, Henrique, Advisors (Luís Bastião and Carlos Costa)
+**Attendees:** Carolina, Diogo, João, Raquel, Henrique, Supervisors (Luís Bastião and Carlos Costa)
 
 **Absentees:**
 

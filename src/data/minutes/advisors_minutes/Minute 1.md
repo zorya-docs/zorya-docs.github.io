@@ -1,13 +1,13 @@
 ---
 id: 1
 date: 2025-10-10
-title: Minute 1 
+title: Minute 1 - 12/02
 title2: 12/02
 ---
 
 # Minute 1 - 12/02, 9:30 - Online
 
-**Attendees:** Carolina, Diogo, João, Raquel, Henrique, Advisors (Luís Bastião and Carlos Costa)
+**Attendees:** Carolina, Diogo, João, Raquel, Henrique, Supervisors (Luís Bastião and Carlos Costa)
 
 **Absentees:**
 
