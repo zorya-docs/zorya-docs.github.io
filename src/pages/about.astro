@@ -3,16 +3,19 @@ import Features2 from '~/components/widgets/Features2.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
+import bastiao from '~/assets/images/bastiao.jpg';
+import cc from '~/assets/images/cc.jpeg';
+
 const metadata = {
   title: 'About Us',
 };
 
 const teamMembersTop = [
   {
-    title: 'João Varela',
-    description: 'Architect | Developer',
-    image: 'https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png',
-    link: 'https://github.com/joaovarela14',
+    title: 'Carolina Prata',
+    description: 'Team Manager | Developer',
+    image: 'https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/sofia-mcguire.png',
+    link: 'https://github.com/carolmprata',
   },
   {
     title: 'Diogo Fernandes',
@@ -30,29 +33,29 @@ const teamMembersTop = [
 
 const teamMembersBottom = [
   {
+    title: 'João Varela',
+    description: 'Architect | Developer',
+    image: 'https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png',
+    link: 'https://github.com/joaovarela14',
+  },
+  {
     title: 'Raquel Vinagre',
     description: 'UI Designer | Developer',
     image: 'https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/joseph-mcfall.png',
     link: 'https://github.com/raquelvinagre',
-  },
-  {
-    title: 'Carolina Prata',
-    description: 'Team Manager | Developer',
-    image: 'https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/sofia-mcguire.png',
-    link: 'https://github.com/carolmprata',
-  },
+  }
 ];
 
 const advisors = [
   {
     title: 'Luís Bastião',
     description: 'Advisor',
-    image: 'https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/thomas-lean.png',
+    image: bastiao.src,
   },
   {
     title: 'Carlos Costa',
     description: 'Co-Advisor',
-    image: 'https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png',
+    image: cc.src,
   },
 ];
 ---
@@ -62,7 +65,7 @@ const advisors = [
   <Hero tagline="About Us">
     <Fragment slot="title">Meet Our Team</Fragment>
     <Fragment slot="subtitle"
-      >We are students from the University of Aveiro, passionate about technology and innovation.</Fragment
+      >We are a group of students from University of Aveiro. Passionate about science and innovation, our goal is to improve workflow quality. With the help of new technologies and a young spirit, we are ready to take on any challenge ahead of us! </Fragment
     >
   </Hero>
 
@@ -93,7 +96,7 @@ const advisors = [
       </div>
 
       <!-- Bottom Row (2 members, centered) -->
-      <div class="grid gap-8 lg:gap-16 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 justify-center mt-8">
+      <div class="grid gap-8 lg:gap-16 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 justify-center mt-4">
         {
           teamMembersBottom.map((member) => (
             <div class="text-center text-gray-500 dark:text-gray-400 mx-auto">
@@ -121,7 +124,7 @@ const advisors = [
         {
           advisors.map((advisor) => (
             <div class="text-center text-gray-500 dark:text-gray-400">
-              <img class="mx-auto mb-4 w-36 h-36 rounded-full" src={advisor.image} alt={advisor.title} />
+              <img class="mx-auto mb-4 w-36 h-36 rounded-full" src={String(advisor.image)} alt={advisor.title} />
               <h3 class="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{advisor.title}</h3>
               <p>{advisor.description}</p>
             </div>

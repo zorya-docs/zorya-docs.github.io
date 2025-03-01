@@ -31,21 +31,19 @@ export const footerData = {
     {
       title: 'Team',
       links: [
-        { text: 'João Varela', href: 'https://github.com/joaovarela14' },
+        { text: 'Carolina Prata', href: 'https://github.com/carolmprata' },
         { text: 'Diogo Fernandes', href: 'https://github.com/diogux' },
         { text: 'Henrique Oliveira', href: 'https://github.com/Hbmo1' },
+        { text: 'João Varela', href: 'https://github.com/joaovarela14' },
         { text: 'Raquel Vinagre', href: 'https://github.com/raquelvinagre' },
-        { text: 'Carolina Prata', href: 'https://github.com/carolmprata' },
       ],
     },
     {
       title: 'Platform',
       links: [
-        { text: 'Developer API', href: '#' },
-        { text: 'Partners', href: '#' },
-        { text: 'Atom', href: '#' },
-        { text: 'Electron', href: '#' },
-        { text: 'AstroWind Desktop', href: '#' },
+        { text: 'Zorya', href: '#' },
+        { text: 'Github', href: '#' },
+        { text: 'Google Drive', href: 'https://drive.google.com/drive/folders/1bUm1OpfH7sn6omVz0ELLiO8NO9dMocuL' },
       ],
     },
   ],
@@ -53,8 +51,8 @@ export const footerData = {
     { text: 'Projeto em Informática', href: '#' },
     { text: '2025'},
   ],
-  socialLinks: [
-    { ariaLabel: 'X', icon: 'tabler:brand-google', href: 'https://drive.google.com/drive/folders/1bUm1OpfH7sn6omVz0ELLiO8NO9dMocuL' },
-    { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/onwidget/astrowind' },
-  ]
+  // socialLinks: [
+  //   { ariaLabel: 'X', icon: 'tabler:brand-google', href: 'https://drive.google.com/drive/folders/1bUm1OpfH7sn6omVz0ELLiO8NO9dMocuL' },
+  //   { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/onwidget/astrowind' },
+  // ]
 };

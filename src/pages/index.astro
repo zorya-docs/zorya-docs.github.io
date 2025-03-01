@@ -2,6 +2,7 @@
 import Layout from '~/layouts/PageLayout.astro';
 
 import Hero from '~/components/widgets/Hero.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 import Features2 from '~/components/widgets/Features2.astro';
@@ -10,6 +11,8 @@ import Stats from '~/components/widgets/Stats.astro';
 import Features3 from '~/components/widgets/Features3.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Brands from '~/components/widgets/Brands.astro';
+import cell from '~/assets/images/cell.svg';
+// import ola2 from '~/assets/images/ola2.jpg';
 
 import { YouTube } from 'astro-embed';
 
@@ -21,7 +24,7 @@ const metadata = {
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
 
-  <Hero
+  <Hero2
     tagline="Illuminating the Future of Pathology"
     actions={[
       {
@@ -33,11 +36,11 @@ const metadata = {
       },
       { text: 'Learn more', href: '#features' },
     ]}
+      image={{ src: cell, alt: "hero-image" }}
   >
     <Fragment slot="title">
       Bringing light to every cell
     </Fragment>
-
     <Fragment slot="subtitle">
       Zorya is a Web Platform for data lakes and exploration of artificial intelligence for Digital Pathology.
     </Fragment>
@@ -55,32 +58,18 @@ const metadata = {
   </Hero>
 
   <!-- Features2 Widget ************** -->
-   <img src="/src/assets/images/main.jpg" alt="hero-image" class="w-1/2 mx-auto" />
   <Features2
-    title="Project abstract"
-    subtitle="Zorya is a web platform that will support a data lake for medical imaging and enable federated learning across multiple institutions. It aims to simplify the workflow for researchers working with high-resolution scanned slides, improve content discovery, and facilitate collaborative algorithm development."
+    title="Overview"
+    subtitle="This project aims to develop a web platform that will support a data lake for medical imaging and enable federated learning across multiple institutions. It aims to simplify the workflow for researchers working with high-resolution scanned slides, improve content discovery, and facilitate collaborative algorithm development."
   >
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
   </Features2>
 
-  <!-- Stats Widget ****************** -->
-
-  <Stats
-    title="Discover the impressive impact of Astrowind"
-    subtitle="The numbers below reflect the trust our users have placed in us and the remarkable outcomes we've helped them achieve."
-    stats={[
-      { title: 'Downloads', amount: '182K' },
-      { title: 'Websites Launched', amount: '87' },
-      { title: 'User Ratings', amount: '4.8' },
-      { title: 'Satisfied Clients', amount: '116K' },
-    ]}
-  />
-
   <!-- Features2 Widget ************** -->
 
-  <Features2
+  <!-- <Features2
     title="Our Goals"
     subtitle="We offer a wide range of features"
     items={[
@@ -109,53 +98,53 @@ const metadata = {
       //   icon: 'flat-color-icons:template',
       // },
     ]}
-  >
-    <Fragment slot="bg">
+  > -->
+    <!-- <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-  </Features2>
+  </Features2> -->
 
   <!-- Features Widget *************** -->
 
   <Features
     id="features"
-    title="Main features of our project"
-    subtitle="Possess several key characteristics to effectively cater to the needs of startups and entrepreneurs."
-    columns={3}
+    title="Main features"
+    subtitle="Simplifying the workflow for researchers."
+    columns={2}
     items={[
       {
-        title: 'Modern and Professional Design',
+        title: 'Store diverse medical imaging datasets',
         description:
-          'Have a contemporary design that reflects current design trends and gives a professional impression.',
-        icon: 'tabler:artboard',
+          'Involving the creation of concepts like datasets, pathology, and AI models.',
+        icon: 'tabler:database',
       },
       {
-        title: 'Responsive and Mobile-Friendly',
-        description: 'Adapt seamlessly to different screen sizes and devices to ensure a consistent experience.',
+        title: 'A web-based user-friendly dashboard ',
+        description: 'For data exploration and algorithm development.',
         icon: 'tabler:picture-in-picture',
       },
       {
-        title: 'Customizability',
+        title: 'Matchmaking algorithms',
         description:
-          'Easily customizable, allowing users to adapt the design, colors, typography, and content to match their brand identity.',
-        icon: 'tabler:adjustments-horizontal',
+          'For specific Digital Pathology images.',
+        icon: 'tabler:puzzle',
       },
       {
-        title: 'Fast Loading Times',
-        description: 'Optimized for speed to ensure a smooth user experience and favorable search engine rankings.',
-        icon: 'tabler:rocket',
+        title: 'Notifications and alerts for important events updates',
+        description: 'Updates on new datasets, AI models, and pathology.',
+        icon: 'tabler:bell',
       },
-      {
-        title: 'Search Engine Optimization (SEO)',
-        description:
-          'Incorporate SEO best practices in template structure and code to improve visibility in search engine results.',
-        icon: 'tabler:arrows-right-left',
-      },
-      {
-        title: 'Compatibility',
-        description: 'The templates work seamlessly across various content management systems and website builders.',
-        icon: 'tabler:plug-connected',
-      },
+      // {
+      //   title: 'Search Engine Optimization (SEO)',
+      //   description:
+      //     'Incorporate SEO best practices in template structure and code to improve visibility in search engine results.',
+      //   icon: 'tabler:arrows-right-left',
+      // },
+      // {
+      //   title: 'Compatibility',
+      //   description: 'The templates work seamlessly across various content management systems and website builders.',
+      //   icon: 'tabler:plug-connected',
+      // },
     ]}
   />
 
@@ -200,53 +189,4 @@ const metadata = {
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
   </FAQs> -->
-
-  <!-- Features3 Widget ************** -->
-  <Features3
-    title="Let us know how we can help"
-    subtitle="We’re here to help and answer any question you might have."
-    columns={4}
-    items={[
-      {
-        title: 'Phone',
-        icon: 'tabler:phone',
-        callToAction: {
-          target: '_blank',
-          text: 'Call us',
-          href: '/',
-          variant: 'link',
-        },
-      },
-      {
-        title: 'Email',
-        icon: 'tabler:mail',
-        callToAction: {
-          target: '_blank',
-          text: 'Write to us',
-          href: '/',
-          variant: 'link',
-        },
-      },
-      {
-        title: 'Chat with sales',
-        icon: 'tabler:message-circle',
-        callToAction: {
-          target: '_blank',
-          text: 'Start chatting',
-          href: '/',
-          variant: 'link',
-        },
-      },
-      {
-        title: 'Chat with support',
-        icon: 'tabler:message-circle',
-        callToAction: {
-          target: '_blank',
-          text: 'Start chatting',
-          href: '/',
-          variant: 'link',
-        },
-      },
-    ]}
-  />
 </Layout>
