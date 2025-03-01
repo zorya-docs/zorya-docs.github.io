@@ -14,18 +14,12 @@
 - Os ficheiros `[...slug].astro` servem para rotear para por exemplo minutes/minute-1
 - Para adicionar coisas à navbar é no ficheiro `navigation.ts` (vejam como fiz para as minutas)
 - Para adicionar uma **collection**, que é a pasta src/data/meetings, têm que escrever como fiz no ficheiro `config.ts`, isto serve para podermos usar os ficheiros .md
-  - Para ver como usar a collection, no ficheiro de cada minuta e da lista tem lá um exemplo
+- Para ver como usar a collection, no ficheiro de cada minuta e da lista tem lá um exemplo
 - Para editarem certas coisas precisam de alterar o ficheiro config.yaml (para editarem o titulo por exemplo)
 - Para quem é noob e n saiba, ctrl+p no vscode dá para pesquisar por nome de ficheiro !!!!!
 
 **O que falta?** (deve faltar mais que isto, é oq me to a lembrar agora)
-- Mudar bastante as minutas, está muito feio como está, já falei com a raquel
-- Mudar a página inicial, vamos usar a página Startup `src/pages/home/startup.astro`
-- Fazer uma página about us (há muitos components bonitos disto na net)
-- Fazer página para milestones e apresentações (pode ser apenas uma página acho)
-
-
-
+- 
 
 ## Getting started
 
