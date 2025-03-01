@@ -18,8 +18,8 @@
 - Para editarem certas coisas precisam de alterar o ficheiro config.yaml (para editarem o titulo por exemplo)
 - Para quem é noob e n saiba, ctrl+p no vscode dá para pesquisar por nome de ficheiro !!!!!
 
-**O que falta?** (deve faltar mais que isto, é oq me to a lembrar agora)
-- 
+**O que falta?**
+- adicionar fotos
 
 ## Getting started
 
