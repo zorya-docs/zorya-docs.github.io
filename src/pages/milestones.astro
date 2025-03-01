@@ -1,0 +1,31 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+
+// Obter a coleção de milestones
+const milestones = await getCollection('milestones');
+---
+
+<Layout milestones={milestones}>
+  <HeroText title="Milestones" />
+
+  <div
+  class="mx-auto sm:px-4 max-w-2xl prose prose-sm lg:prose-md dark:prose-invert dark:prose-headings:text-slate-300 prose-headings:font-heading prose-headings:leading-tight prose-headings:tracking-tight prose-headings:font-bold prose-a:text-primary dark:prose-a:text-blue-400 prose-img:rounded-md prose-img:shadow-lg mt-6 mb-4"
+>
+  <p class="text-lg mb-6">Explore the milestones below to learn more:</p>
+
+  <!-- Grid container for the milestones buttons -->
+  <div class="grid grid-cols-2 gap-4">
+    {milestones.map((milestone) => (
+      <a
+        href={`/milestones/${milestone.id}`}
+        class="block bg-muted/80 hover:bg-muted/90 shadow-sm hover:shadow-blue1 h-24 flex items-center justify-center rounded-xl border-[3px] border-blue1 text-blue1 hover:border-blue1 hover:text-blue1 dark:border-white dark:text-white dark:hover:border-green1 dark:hover:text-green1 text-lg transition-all duration-300 transform hover:-translate-y-1 w-full"
+      >
+        {milestone.data.title}
+      </a>
+    ))}
+  </div>
+</div>
+
+</Layout>
