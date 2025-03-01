@@ -1,89 +1,133 @@
 ---
 import Features2 from '~/components/widgets/Features2.astro';
-import Features3 from '~/components/widgets/Features3.astro';
 import Hero from '~/components/widgets/Hero.astro';
-import Stats from '~/components/widgets/Stats.astro';
-import Steps2 from '~/components/widgets/Steps2.astro';
 import Layout from '~/layouts/PageLayout.astro';
-const person = '/src/assets/images/hero-image.png';
 
 const metadata = {
-  title: 'About us',
+  title: 'About Us',
 };
+
+const teamMembersTop = [
+  {
+    title: 'João Varela',
+    description: 'Architect | Developer',
+    image: 'https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png',
+    link: 'https://github.com/joaovarela14',
+  },
+  {
+    title: 'Diogo Fernandes',
+    description: 'DevOps Master | Developer',
+    image: 'https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/helene-engels.png',
+    link: 'https://github.com/diogux',
+  },
+  {
+    title: 'Henrique Oliveira',
+    description: 'Product Owner | Developer',
+    image: 'https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png',
+    link: 'https://github.com/Hbmo1',
+  },
+];
+
+const teamMembersBottom = [
+  {
+    title: 'Raquel Vinagre',
+    description: 'UI Designer | Developer',
+    image: 'https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/joseph-mcfall.png',
+    link: 'https://github.com/raquelvinagre',
+  },
+  {
+    title: 'Carolina Prata',
+    description: 'Team Manager | Developer',
+    image: 'https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/sofia-mcguire.png',
+    link: 'https://github.com/carolmprata',
+  },
+];
+
+const advisors = [
+  {
+    title: 'Luís Bastião',
+    description: 'Advisor',
+    image: 'https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/thomas-lean.png',
+  },
+  {
+    title: 'Carlos Costa',
+    description: 'Co-Advisor',
+    image: 'https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png',
+  },
+];
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
-
-  <Hero
-    tagline="About us"
-  >
-    <Fragment slot="title">
-      Meet the team behind <span class="text-accent dark:text-white highlight"> Our Vision</span>
-    </Fragment>
-
-    <Fragment slot="subtitle">
-      We are a passionate group of designers, developers, and strategists dedicated to crafting beautiful and effective website templates. Our mission is to simplify the web design process and empower businesses worldwide.
-    </Fragment>
+  <!-- Hero Section -->
+  <Hero tagline="About Us">
+    <Fragment slot="title">Meet Our Team</Fragment>
+    <Fragment slot="subtitle"
+      >We are students from the University of Aveiro, passionate about technology and innovation.</Fragment
+    >
   </Hero>
 
-  <!-- Team Members Section ****************** -->
+  <!-- Team Members Section -->
+  <section>
+    <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-6">
+      <div class="mx-auto mb-8 max-w-screen-sm lg:mb-16">
+        <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Our Team</h2>
+      </div>
 
-  <Features2
-    title="Our Team"
-    tagline="The People Behind the Vision"
-    columns={3}
-    items={[
-      {
-        title: 'João Varela',
-        description: 'Architect | Developer',
-        image: { src: person, alt: 'João Varela' }
-      },
-      {
-        title: 'Diogo Fernandes',
-        description: 'DevOps Master | Developer',
-        image: { src: person, alt: 'Diogo Fernandes' }
-      },
-      {
-        title: 'Henrique Oliveira',
-        description: 'Product Owner | Developer',
-        image: { src: person, alt: 'Henrique Oliveira' }
-      }
-    ]}
-  />
-  <Features2
-    columns={2}
-    items={[
-      {
-        title: 'Raquel Vinagre',
-        description: 'UX Designer | Developer',
-        image: { src: person, alt: 'Raquel Vinagre' }
-      },
-      {
-        title: 'Carolina Prata',
-        description: 'Scrum Master | Developer',
-        image: { src: person, alt: 'Carolina Prata' }
-      }
-    ]}
-  />
+      <!-- Top Row (3 members) -->
+      <div class="grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
+        {
+          teamMembersTop.map((member) => (
+            <div class="text-center text-gray-500 dark:text-gray-400">
+              <a href={member.link} target="_blank" rel="noopener noreferrer">
+                <img class="mx-auto mb-4 w-36 h-36 rounded-full" src={member.image} alt={member.title} />
+              </a>
+              <h3 class="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                <a href={member.link} target="_blank" rel="noopener noreferrer">
+                  {member.title}
+                </a>
+              </h3>
+              <p>{member.description}</p>
+            </div>
+          ))
+        }
+      </div>
 
-  <!-- Advisors Section ****************** -->
+      <!-- Bottom Row (2 members, centered) -->
+      <div class="grid gap-8 lg:gap-16 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 justify-center mt-8">
+        {
+          teamMembersBottom.map((member) => (
+            <div class="text-center text-gray-500 dark:text-gray-400 mx-auto">
+              <a href={member.link} target="_blank" rel="noopener noreferrer">
+                <img class="mx-auto mb-4 w-36 h-36 rounded-full" src={member.image} alt={member.title} />
+              </a>
+              <h3 class="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                <a href={member.link} target="_blank" rel="noopener noreferrer">
+                  {member.title}
+                </a>
+              </h3>
+              <p>{member.description}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
 
-  <Features2
-    title="Our Advisors"
-    tagline="Guiding Us to Success"
-    columns={2}
-    items={[
-      {
-        title: 'Luís Bastião',
-        description: 'Advisor',
-        image: { src: person, alt: 'Luís Bastião' }
-      },
-      {
-        title: 'Carlos Costa',
-        description: 'Co-Advisor',
-        image: { src: person, alt: 'Carlos Costa' }
-      }
-    ]}
-  />
+  <!-- Advisors Section -->
+  <section>
+    <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-6">
+      <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Our Advisors</h2>
+      <div class="grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-2">
+        {
+          advisors.map((advisor) => (
+            <div class="text-center text-gray-500 dark:text-gray-400">
+              <img class="mx-auto mb-4 w-36 h-36 rounded-full" src={advisor.image} alt={advisor.title} />
+              <h3 class="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{advisor.title}</h3>
+              <p>{advisor.description}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
 </Layout>
