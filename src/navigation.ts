@@ -51,8 +51,8 @@ export const footerData = {
     { text: 'Projeto em Informática', href: '#' },
     { text: '2025'},
   ],
-  // socialLinks: [
-  //   { ariaLabel: 'X', icon: 'tabler:brand-google', href: 'https://drive.google.com/drive/folders/1bUm1OpfH7sn6omVz0ELLiO8NO9dMocuL' },
-  //   { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/onwidget/astrowind' },
-  // ]
+  socialLinks: [
+    { ariaLabel: 'X', icon: 'tabler:brand-google', href: 'https://drive.google.com/drive/folders/1bUm1OpfH7sn6omVz0ELLiO8NO9dMocuL' },
+    { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/zorya-docs/zorya-docs.github.io' },
+  ]
 };

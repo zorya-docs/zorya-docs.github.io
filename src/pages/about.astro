@@ -2,6 +2,7 @@
 import Features2 from '~/components/widgets/Features2.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Layout from '~/layouts/PageLayout.astro';
+import { Icon } from 'astro-icon/components';
 
 import bastiao from '~/assets/images/bastiao.jpg';
 import cc from '~/assets/images/cc.jpeg';
@@ -13,36 +14,41 @@ const metadata = {
 const teamMembersTop = [
   {
     title: 'Carolina Prata',
-    description: 'Team Manager | Developer',
+    description: 'Team Manager',
     image: 'https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/sofia-mcguire.png',
     link: 'https://github.com/carolmprata',
+    email: 'carolinaprata@ua.pt',
   },
   {
     title: 'Diogo Fernandes',
-    description: 'DevOps Master | Developer',
+    description: 'DevOps Master',
     image: 'https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/helene-engels.png',
     link: 'https://github.com/diogux',
+    email: 'diogomiguel.fernandes@ua.pt',
   },
   {
     title: 'Henrique Oliveira',
-    description: 'Product Owner | Developer',
+    description: 'Product Owner',
     image: 'https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png',
     link: 'https://github.com/Hbmo1',
+    email: 'henrique.bmo@ua.pt',
   },
 ];
 
 const teamMembersBottom = [
   {
     title: 'João Varela',
-    description: 'Architect | Developer',
+    description: 'Architect',
     image: 'https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png',
     link: 'https://github.com/joaovarela14',
+    email: 'joaovarela@ua.pt',
   },
   {
     title: 'Raquel Vinagre',
-    description: 'UI Designer | Developer',
+    description: 'UI Designer',
     image: 'https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/joseph-mcfall.png',
     link: 'https://github.com/raquelvinagre',
+    email: 'raquelvinagre@ua.pt',
   }
 ];
 
@@ -51,13 +57,17 @@ const advisors = [
     title: 'Luís Bastião',
     description: 'Advisor',
     image: bastiao.src,
+    email: 'bastiao@live.ua.pt'
   },
   {
     title: 'Carlos Costa',
     description: 'Co-Advisor',
     image: cc.src,
+    email: 'carlos.costa@ua.pt'
   },
 ];
+
+const icon = 'tabler:brand-github';
 ---
 
 <Layout metadata={metadata}>
@@ -80,17 +90,19 @@ const advisors = [
       <div class="grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
         {
           teamMembersTop.map((member) => (
-            <div class="text-center text-gray-500 dark:text-gray-400">
-              <a href={member.link} target="_blank" rel="noopener noreferrer">
-                <img class="mx-auto mb-4 w-36 h-36 rounded-full" src={member.image} alt={member.title} />
-              </a>
-              <h3 class="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                <a href={member.link} target="_blank" rel="noopener noreferrer">
-                  {member.title}
-                </a>
-              </h3>
-              <p>{member.description}</p>
-            </div>
+        <div class="text-center text-gray-500 dark:text-gray-400">
+          <a href={member.link} target="_blank" rel="noopener noreferrer">
+            <img class="mx-auto mb-4 w-36 h-36 rounded-full" src={member.image} alt={member.title} />
+          </a>
+          <h3 class="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white flex items-center justify-center">
+            <a href={member.link} target="_blank" rel="noopener noreferrer" class="flex items-center">
+          {member.title}
+          {icon && <Icon name={icon} class="w-5 h-5 ml-2" />}
+            </a>
+          </h3>
+          <p class="text-black dark:text-white">{member.description}</p>
+          <p>{member.email}</p>
+        </div>
           ))
         }
       </div>
@@ -104,11 +116,14 @@ const advisors = [
                 <img class="mx-auto mb-4 w-36 h-36 rounded-full" src={member.image} alt={member.title} />
               </a>
               <h3 class="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                <a href={member.link} target="_blank" rel="noopener noreferrer">
-                  {member.title}
+                <a href={member.link} target="_blank" rel="noopener noreferrer" class="flex items-center">
+                  {member.title} {icon && <Icon name={icon} class="w-5 h-5 ml-2" />}
                 </a>
               </h3>
-              <p>{member.description}</p>
+              <p class="text-black dark:text-white">{member.description}</p>
+              <p>{member.email}</p>
+                <a href={member.link} target="_blank" rel="noopener noreferrer">
+                </a>
             </div>
           ))
         }
@@ -126,7 +141,8 @@ const advisors = [
             <div class="text-center text-gray-500 dark:text-gray-400">
               <img class="mx-auto mb-4 w-36 h-36 rounded-full" src={String(advisor.image)} alt={advisor.title} />
               <h3 class="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{advisor.title}</h3>
-              <p>{advisor.description}</p>
+              <p class="text-black dark:text-white">{advisor.description}</p>
+              <p>{advisor.email}</p>
             </div>
           ))
         }
