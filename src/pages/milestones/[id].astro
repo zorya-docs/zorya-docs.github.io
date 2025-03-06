@@ -1,0 +1,78 @@
+---
+import { getCollection, getEntry, render } from 'astro:content';
+import Layout from '~/layouts/PageLayout.astro';
+
+const milestones = await getCollection('milestones');
+
+const { id } = Astro.params;
+
+const milestone = await getEntry('milestones', id);
+
+if (!milestone) {
+  throw new Error(`Milestone não encontrada: ${id}`);
+}
+
+const iframe_url = milestone.data.iframe_url;
+const { Content } = await render(milestone);
+
+// Função getStaticPaths para gerar os caminhos dinâmicos
+export async function getStaticPaths() {
+  // Carregar as milestones para gerar os caminhos
+  const milestones = await getCollection('milestones');
+
+  return milestones.map((milestone) => ({
+    params: { id: milestone.id },  // Cada 'id' será um caminho dinâmico
+  }));
+}
+---
+
+<Layout metadata={{ title: `Milestone: ${milestone.data.title}` }} milestones={milestones}>
+  <div class="flex max-w-5xl mx-auto mt-6 p-4 bg-muted/80 dark:bg-muted/90 rounded-xl transition-all">
+    <!-- Sidebar -->
+    <aside class="w-1/5 p-4 border-r border-gray-300 dark:border-gray-700">
+      <h2 class="text-lg text-customGreen2 font-bold mb-4">Milestones</h2>
+      <ul>
+        {milestones.map((milestone) => (
+          <li class="mb-2" >
+            <a
+              href={`/milestones/${milestone.id}`}
+              class="cursor-pointer dark:text-white hover:underline"
+            >
+              {milestone.data.title}
+            </a>
+            {/* Adicionando os tópicos com mais indentação */}
+            {milestone.data.topics && (
+              <ul class="ml-6 mt-2">
+                {milestone.data.topics.map((topic) => (
+                  <li class="mb-1" >
+                    <a
+                      href={`#${topic.replace(/\s+/g, '-').toLowerCase()}`}
+                      class="text-sm dark:text-green1 hover:underline"
+                    >
+                      {topic}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            )}
+            
+          </li>
+        ))}
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <section class="w-3/4 px-4">
+      <div class="mx-auto px-4 sm:px-4 max-w-2xl prose prose-sm lg:prose-md dark:prose-invert dark:prose-headings:text-slate-300 prose-headings:font-heading prose-headings:leading-tight prose-headings:tracking-tight prose-headings:font-bold prose-a:text-primary dark:prose-a:text-blue-400 prose-img:rounded-md prose-img:shadow-lg mt-6 prose-headings:scroll-mt-[60px] prose-li:my-0">
+        {/* Exibindo o conteúdo da milestone */}
+        <h1>{milestone.data.title}</h1>              
+
+        {iframe_url && (
+          <iframe src={iframe_url} width="95%" height="463px" allowfullscreen="true"></iframe>
+        )}
+        <Content />
+
+      </div>
+    </section>
+  </div>
+</Layout>

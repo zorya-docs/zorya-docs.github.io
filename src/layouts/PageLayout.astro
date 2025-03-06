@@ -9,6 +9,27 @@ import type { MetaData } from '~/types';
 
 export interface Props {
   metadata?: MetaData;
+  milestones: {
+
+    id: string;
+
+    body?: string;
+
+    collection: "milestones";
+
+    data: {
+
+      title?: string;
+
+      iframe_url?: string;
+
+    };
+
+    filePath?: string;
+
+    }[];
+
+    
 }
 
 const { metadata } = Astro.props;

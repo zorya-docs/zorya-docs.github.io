@@ -92,10 +92,20 @@ const minutesGroupCollection = defineCollection({
   }),
 });
 
+const milestonesCollection = defineCollection({
+  loader: glob({ pattern: ['*.md', '*.mdx'], base: 'src/data/milestones' }),
+  schema: z.object({
+    title: z.string().optional(),
+    iframe_url: z.string().optional(),
+    topics: z.array(z.string()).optional(),
+  }),
+});
+
 
 export const collections = {
   post: postCollection,
   minutes: minutesCollection,
   advisors_minutes: minutesAdvisorsCollection,
   group_minutes: minutesGroupCollection,
+  milestones: milestonesCollection,
 };
