@@ -7,8 +7,8 @@ const metadata = {
   title: 'Minutes',
 };
 
-const advisoryMinutes = (await getCollection('advisors_minutes'));
-const groupMinutes = (await getCollection('group_minutes'));
+const advisoryMinutes = (await getCollection('advisors_minutes')).sort((a, b) => parseInt(b.id) - parseInt(a.id));
+const groupMinutes = (await getCollection('group_minutes')).sort((a, b) => parseInt(b.id) - parseInt(a.id));
 
 ---
 
@@ -29,7 +29,7 @@ const groupMinutes = (await getCollection('group_minutes'));
             <tr class="border-4 border-customGreen3 dark:border-customGreen3">
               {/* Supervisors Minutes (2 items per cell) */}
               <td class="px-6 py-4 border-4 border-customGreen3 dark:border-customGreen3 w-1/2">
-              <div class="flex justify-between gap-4"> {/* Adiciona um gap de 4 para o espaçamento */}
+              <div class="flex justify-between gap-4"> 
                 {/* First advisory minute */}
                 {advisoryMinutes[advisoryMinutes.length - 1 - (rowIndex * 2)] ? (
                 <a
@@ -52,30 +52,31 @@ const groupMinutes = (await getCollection('group_minutes'));
               </div>
               </td>
 
-              {/* Team Minutes (2 items per cell) */}
+              {/* Team Minutes (2 items per cell) - Reversed Order */}
               <td class="px-6 py-4 border-4 border-customGreen3 dark:border-customGreen3 w-1/2">
-                <div class="flex justify-between gap-4"> {/* Adiciona um gap de 4 para o espaçamento */}
+                <div class="flex justify-between gap-4"> 
                   {/* First group minute */}
-                  {groupMinutes[rowIndex * 2] ? (
+                  {groupMinutes[groupMinutes.length - 1 - (rowIndex * 2)] ? (
                     <a
-                      href={`/minutes/group_minutes/${groupMinutes[rowIndex * 2].id}`}
+                      href={`/minutes/group_minutes/${groupMinutes[groupMinutes.length - 1 - (rowIndex * 2)].id}`}
                       class="block bg-muted/80 hover:bg-muted/90 shadow-sm hover:shadow-green1 p-4 rounded-xl border-[3px] border-blue1 text-blue1 hover:border-blue1 hover:text-blue1 dark:border-white dark:text-white dark:hover:border-red-500 dark:hover:text-red-500 text-lg transition-all duration-300 transform hover:-translate-y-1 w-1/2"
                     >
-                      📑 {groupMinutes[rowIndex * 2].data.title}
+                      📑 {groupMinutes[groupMinutes.length - 1 - (rowIndex * 2)].data.title}
                     </a>
                   ) : null}
 
                   {/* Second group minute */}
-                  {groupMinutes[rowIndex * 2 + 1] ? (
+                  {groupMinutes[groupMinutes.length - 1 - (rowIndex * 2 + 1)] ? (
                     <a
-                      href={`/minutes/group_minutes/${groupMinutes[rowIndex * 2 + 1].id}`}
+                      href={`/minutes/group_minutes/${groupMinutes[groupMinutes.length - 1 - (rowIndex * 2 + 1)].id}`}
                       class="block bg-muted/80 hover:bg-muted/90 shadow-sm hover:shadow-green1 p-4 rounded-xl border-[3px] border-blue1 text-blue1 hover:border-blue1 hover:text-blue1 dark:border-white dark:text-white dark:hover:border-red-500 dark:hover:text-red-500 text-lg transition-all duration-300 transform hover:-translate-y-1 w-1/2"
                     >
-                      📑 {groupMinutes[rowIndex * 2 + 1].data.title}
+                      📑 {groupMinutes[groupMinutes.length - 1 - (rowIndex * 2 + 1)].data.title}
                     </a>
                   ) : null}
                 </div>
               </td>
+
             </tr>
           ))}
         </tbody>
