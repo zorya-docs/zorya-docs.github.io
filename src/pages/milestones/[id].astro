@@ -55,6 +55,7 @@ export async function getStaticPaths() {
                 ))}
               </ul>
             )}
+            
           </li>
         ))}
       </ul>
@@ -64,10 +65,13 @@ export async function getStaticPaths() {
     <section class="w-3/4 px-4">
       <div class="mx-auto px-4 sm:px-4 max-w-2xl prose prose-sm lg:prose-md dark:prose-invert dark:prose-headings:text-slate-300 prose-headings:font-heading prose-headings:leading-tight prose-headings:tracking-tight prose-headings:font-bold prose-a:text-primary dark:prose-a:text-blue-400 prose-img:rounded-md prose-img:shadow-lg mt-6 prose-headings:scroll-mt-[60px] prose-li:my-0">
         {/* Exibindo o conteúdo da milestone */}
-        <Content />
+        <h1>{milestone.data.title}</h1>              
+
         {iframe_url && (
-          <iframe src={iframe_url} width="70%" height="350px" allowfullscreen="true"></iframe>
+          <iframe src={iframe_url} width="95%" height="463px" allowfullscreen="true"></iframe>
         )}
+        <Content />
+
       </div>
     </section>
   </div>
