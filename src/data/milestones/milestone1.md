@@ -15,8 +15,7 @@ topics:
 #### Date: 25/02/2025
 
 ## Introduction
-Zorya 
-is a web-based platform designed for medical imaging research. It supports a data lake for storing and managing large-scale medical images. Zorya enables federated learning, workflow optimization, content discovery, and collaborative algorithm development for medical researchers and AI developers.
+- Zorya is a web-based platform designed for medical imaging research. It supports a data lake for storing and managing large-scale medical images. Zorya enables federated learning, workflow optimization, content discovery, and collaborative algorithm development for medical researchers and AI developers.
 ---
 
 ### **1. Contextualization of the purpose**  
