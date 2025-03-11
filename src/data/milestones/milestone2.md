@@ -32,6 +32,37 @@ The project aims to develop an **information system for digital pathology**, ena
 
 ## **2. State of the Art**
 
+The field of **digital pathology** has seen significant advancements, leading to the development of various tools that address different aspects of image analysis, annotation, and AI-assisted diagnosis. However, many of these solutions remain **fragmented**, lacking a fully integrated workflow that meets the needs of both pathologists and researchers.
+
+### **Comparison of Existing Solutions**  
+The table below presents a comparative analysis of popular tools in digital pathology, evaluating essential features for an integrated system.
+
+| Tasks | QuPath | OpenSlide | ImageJ | CellProfiler | Kaapana | Zorya |
+|-------|--------|-----------|--------|-------------|---------|-------|
+| **Diverse Image Repositories** | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ |
+| **Assign Cases to Specialists** | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ |
+| **User Management** | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ |
+| **Image Annotation Tools** | ✅ | ❌ | ✅ | ✅ | ❌ | ✅ |
+| **AI-Assisted Diagnosis Integration** | ✅ | ❌ | ❌ | ❌ | ✅ | ✅ |
+
+### **Key Limitations of Existing Solutions**  
+- **QuPath**: Excellent for **image annotation**, but lacks **user management** and does not natively integrate AI-assisted diagnosis.  
+- **OpenSlide**: Primarily focused on **image visualization**, with no support for advanced features like case management or annotation.  
+- **ImageJ** and **CellProfiler**: Strong in **image processing and analysis**, but lack **user management, case handling, and AI integration**.  
+- **Kaapana**: Provides **user management and AI integration**, but does not include **native annotation tools**.  
+- **Zorya**: The most **comprehensive solution**, covering all analyzed functionalities, but may present challenges when integrating with existing hospital workflows.  
+
+### **How Our Project Differentiates Itself**  
+Our system aims to **unify essential functionalities**, offering:  
+✅ **Support for diverse image repositories**, handling multiple formats.  
+✅ **Automated case assignment** among specialists.  
+✅ **User management** with role-based permissions.  
+✅ **Advanced image annotation tools** to assist pathologists.  
+✅ **AI-powered diagnosis integration**, enabling automated image analysis and decision support.  
+
+By addressing the **limitations of existing solutions**, our project provides a **more integrated and efficient** digital pathology system.
+
+
 ---
 
 ## **3. Requirements**
@@ -117,42 +148,21 @@ To be implemented in the AI training module.
 
 ## **4. Actors**
 
-## **5. Personas**
+---
+
+## **5. User Stories and Use Cases**
 
 ---
 
-## **6. User Stories and Use Cases**
-
-### **Use Cases**
--  Make Annotations on a Medical Image (Whole-Slide Image - WSI)
--  Filter and Search Datasets by Tissue Type, Organ, Pathology, etc.
--  Choose Algorithm for a Specific Image
--  Analyze Datasets from a Selected Institution
--  Export Datasets
--  Receive Notifications and Alerts About Important Events
--  Compare Different AI Models on a Dataset
--  Create a New Dataset from Selected Images
--  Edit and Update Metadata of an Image
--  Configure Custom Alerts
--  Compare a Medical Image with Previous Cases
--  Validate the Predictions of an AI Model
--  Distribute Work Among Specialists
--  Create, Use a Workflow
--  Use an External Model Through an API
--  Send Notifications to Specialist Doctors
-
+## **6. System Architecture**
 
 ---
 
-## **7. System Architecture**
+## **7. Domain Model**
 
 ---
 
-## **8. Domain Model**
-
----
-
-## **9. Mock-ups**
+## **8. Mock-ups**
 
 
 
