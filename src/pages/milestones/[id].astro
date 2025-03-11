@@ -66,22 +66,45 @@ export async function getStaticPaths() {
         class="mx-auto px-4 sm:px-4 max-w-2xl prose prose-sm lg:prose-md dark:prose-invert dark:prose-headings:text-slate-300 prose-headings:font-heading prose-headings:leading-tight prose-headings:tracking-tight prose-headings:font-bold prose-a:text-primary dark:prose-a:text-blue-400 prose-img:rounded-md prose-img:shadow-lg mt-6 prose-headings:scroll-mt-[60px] prose-li:my-0"
       >
         {/* Exibindo o conteúdo da milestone */}
-        <h1>{milestone.data.title}</h1>
+        <div class="row">
+          {/* Container flexível para alinhar os elementos */}
+          <div class="row flex justify-between items-center w-full mb-4">
+            {/* Título da Milestone */}
+            <h1 class="font-bold text-xl leading-none">{milestone.data.title}</h1>
+          
+            {/* Download Button */}
+            {pdf_url && (
+              <a
+                href={pdf_url}
+                download
+                class="inline-flex items-center gap-2 bg-primary !text-white font-semibold py-2 px-4 rounded-lg shadow-lg hover:bg-primary-dark transition-transform transform hover:scale-105 no-underline h-10 mr-8"
+              >
+                <svg 
+                  class="w-6 h-6 text-white"
+                  aria-hidden="true" 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  width="24" 
+                  height="24" 
+                  fill="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path fill-rule="evenodd" d="M13 11.15V4a1 1 0 1 0-2 0v7.15L8.78 8.374a1 1 0 1 0-1.56 1.25l4 5a1 1 0 0 0 1.56 0l4-5a1 1 0 1 0-1.56-1.25L13 11.15Z" clip-rule="evenodd"/>
+                  <path fill-rule="evenodd" d="M9.657 15.874 7.358 13H5a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2h-2.358l-2.3 2.874a3 3 0 0 1-4.685 0ZM17 16a1 1 0 1 0 0 2h.01a1 1 0 1 0 0-2H17Z" clip-rule="evenodd"/>
+                </svg>
+                Download
+              </a>
+            )}
+          </div>
+          
+        
+          {/* Iframe */}
+          {iframe_url && <iframe src={iframe_url} width="95%" height="463px" allowfullscreen="true" />}
+        </div>
+        
+        
 
-        {iframe_url && <iframe src={iframe_url} width="95%" height="463px" allowfullscreen="true" />}
 
-        {/* Download Button */}
-        {
-          pdf_url && (
-            <a
-              href={pdf_url}
-              download
-              class="mt-4 inline-block bg-primary text-white font-semibold py-2 px-4 rounded-md shadow hover:bg-primary-dark transition"
-            >
-              Download PDF
-            </a>
-          )
-        }
+
 
         <Content />
       </div>
