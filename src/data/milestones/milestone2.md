@@ -148,9 +148,41 @@ To be implemented in the AI training module.
 
 ## **4. Actors**
 
+- #### Doctor / Researcher  
+  A medical specialist with expertise in a specific field. They can annotate medical images, create and execute workflows, and run AI models for analysis.
+
+- #### Team Leader  
+  A senior Doctor/Researcher responsible for overseeing projects and assigning tasks to specialists based on their expertise.
+
+- #### Admin  
+  Oversees platform administration, managing user accounts, permissions, and system access.
+
+- #### Data Manager  
+  A technical expert responsible for uploading and managing medical images from the backend, ensuring data integrity and availability.
+
+
 ---
 
 ## **5. User Stories and Use Cases**
+
+### **Use Cases**
+-  Make Annotations on a Medical Image (Whole-Slide Image - WSI)
+-  Filter and Search Datasets by Tissue Type, Organ, Pathology, etc.
+-  Choose Algorithm for a Specific Image
+-  Analyze Datasets from a Selected Institution
+-  Export Datasets
+-  Receive Notifications and Alerts About Important Events
+-  Compare Different AI Models on a Dataset
+-  Create a New Dataset from Selected Images
+-  Edit and Update Metadata of an Image
+-  Configure Custom Alerts
+-  Compare a Medical Image with Previous Cases
+-  Validate the Predictions of an AI Model
+-  Distribute Work Among Specialists
+-  Create, Use a Workflow
+-  Use an External Model Through an API
+-  Send Notifications to Specialist Doctors
+
 
 ---
 
