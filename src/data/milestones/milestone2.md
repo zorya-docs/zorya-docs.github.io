@@ -314,10 +314,12 @@ To be implemented in the AI training module.
 ---
 
 ## **8. System Architecture**
+![System Architecture](/src/assets/images/arquitetura.png)
 
 ---
 
 ## **9. Domain Model**
+![Domain Model](/src/assets/images/Zorya_Domain_Model.png)
 
 ---
 
