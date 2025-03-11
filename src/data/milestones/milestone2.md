@@ -4,7 +4,7 @@ title: 'MS 2 - Elaboration'
 iframe_url: 'https://docs.google.com/presentation/d/e/2PACX-1vQ0X0bVUTxH5vdvb1qO8J5nBNr8RvlBF4YXcSzi3FcIgHmS6vACpFqgxRX0lTyX9RZHagTcKH3peb3N/embed?start=false&loop=false&delayms=3000"'
 pdf_url: '/milestones/milestone2.pdf'
 topics:
-  - 'Context and Goals'
+  - 'Contextualization and Goals'
   - 'State of the art'
   - 'Requirements'
   - 'Actors'
@@ -18,7 +18,8 @@ topics:
 
 #### Date: 11/03/2025
 
-## **1. Contextualization and Goals**
+
+## **Contextualization and Goals**
 The project aims to develop an **information system for digital pathology**, enabling **indexing, searching, and processing of Whole Slide Images (WSI)**. AI-driven workflows will be incorporated to **automatically annotate images**, facilitating medical diagnosis by identifying **cellular necrosis, muscle lesions, and other pathological features**.
 
 #### **Main Features:**
@@ -30,7 +31,7 @@ The project aims to develop an **information system for digital pathology**, ena
 
 ---
 
-## **2. State of the Art**
+## **State of the Art**
 
 The field of **digital pathology** has seen significant advancements, leading to the development of various tools that address different aspects of image analysis, annotation, and AI-assisted diagnosis. However, many of these solutions remain **fragmented**, lacking a fully integrated workflow that meets the needs of both pathologists and researchers.
 
@@ -65,7 +66,7 @@ By addressing the **limitations of existing solutions**, our project provides a 
 
 ---
 
-## **3. Requirements**
+## **Requirements**
 ### <span style="text-decoration: underline;">Functional Requirements</span> <span style="text-decoration: none;">(FR)</span>
 
 
@@ -146,7 +147,7 @@ To be implemented in the AI training module.
 - The system must provide clear API documentation for external tool integration.
 ---
 
-## **4. Actors**
+## **Actors**
 
 - #### Doctor / Researcher  
   A medical specialist with expertise in a specific field. They can annotate medical images, create and execute workflows, and run AI models for analysis.
@@ -165,7 +166,7 @@ To be implemented in the AI training module.
 
 
 
-## **5. Personas**
+## **Personas**
 - #### Dr. Ana Rodrigues – Pulmonology Specialist  
   **Background:**  
   - Age: 42  
@@ -226,9 +227,9 @@ To be implemented in the AI training module.
   - Limited visibility into medical-specific workflows, making it difficult to understand clinical nuances.  
   - Needs to keep track of system logs, errors, and user activity without overwhelming himself with unnecessary technical details.  
 
+---
 
-
-## **6. Scenarios**
+## **Scenarios**
 
 - #### Scenario 1: Dr. Ana Rodrigues – Efficient Lung Disease Diagnosis  
   **Context:**  
@@ -289,8 +290,9 @@ To be implemented in the AI training module.
   **Expected Outcome:**  
   Dr. Miguel ensures an organized workflow, optimizing case distribution, AI-assisted analysis, and collaboration within the research team.  
 
+---
 
-## **7. User Stories and Use Cases**
+## **User Stories and Use Cases**
 
 ### **Use Cases**
 -  Make Annotations on a Medical Image (Whole-Slide Image - WSI)
@@ -313,17 +315,17 @@ To be implemented in the AI training module.
 
 ---
 
-## **8. System Architecture**
+## **System Architecture**
 ![System Architecture](/src/assets/images/arquitetura.png)
 
 ---
 
-## **9. Domain Model**
+## **Domain Model**
 ![Domain Model](/src/assets/images/Zorya_Domain_Model.png)
 
 ---
 
-## **10. Mock-ups**
+## **Mock-ups**
 
 
 

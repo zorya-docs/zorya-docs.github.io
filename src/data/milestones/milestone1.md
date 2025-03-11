@@ -19,14 +19,14 @@ topics:
 - Zorya is a web-based platform designed for medical imaging research. It supports a data lake for storing and managing large-scale medical images. Zorya enables federated learning, workflow optimization, content discovery, and collaborative algorithm development for medical researchers and AI developers.
 ---
 
-### **1. Contextualization of the purpose**  
+### **Contextualization**  
 - A web-based platform designed for **medical imaging** research.  
 - Supports a **data lake** for storing and managing large-scale medical images. 
 - Target Users: Doctors, medical institutions, researchers
 
 ---
 
-### **2. Problems**  
+### **Problems**  
 
 #### **Challenges in Digital Pathology Data Management**  
 - The increasing volume of **high-resolution medical images** demands **efficient solutions** for:  
@@ -47,7 +47,7 @@ topics:
   - Integrating with **AI-driven diagnostics** and **federated learning** workflows.  
 ---
 
-### **3. Goals**  
+### **Goals**  
 
 #### **Manage Digital Pathology Images**  
 - Support classification based on **cell types, organs, tissue types, and stainings**.  
@@ -67,7 +67,7 @@ topics:
 
 ---
 
-### **4. Related Work**  
+### **Related Work**  
 
 #### **QUPATH**  
 - <a href="https://qupath.github.io/" target="_blank" rel="noopener noreferrer">QuPath</a> is an **open-source software** for **digital pathology image analysis**.  
@@ -82,7 +82,7 @@ topics:
 
 ---
 
-### **5. Expected Work**  
+### **Expected Work**  
 
 #### **User Interface**  
 - Develop an **intuitive and user-friendly** web-based interface.  
