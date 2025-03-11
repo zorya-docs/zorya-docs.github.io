@@ -97,6 +97,7 @@ const milestonesCollection = defineCollection({
   schema: z.object({
     title: z.string().optional(),
     iframe_url: z.string().optional(),
+    pdf_url: z.string().optional(),
     topics: z.array(z.string()).optional(),
   }),
 });

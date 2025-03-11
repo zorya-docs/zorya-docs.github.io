@@ -2,6 +2,7 @@
 id: 'milestone2'  
 title: 'MS 2 - Elaboration'
 iframe_url: 'https://docs.google.com/presentation/d/e/2PACX-1vQ0X0bVUTxH5vdvb1qO8J5nBNr8RvlBF4YXcSzi3FcIgHmS6vACpFqgxRX0lTyX9RZHagTcKH3peb3N/embed?start=false&loop=false&delayms=3000"'
+pdf_url: '/milestones/milestone2.pdf'
 topics:
   - 'Context and Goals'
   - 'State of the art'
