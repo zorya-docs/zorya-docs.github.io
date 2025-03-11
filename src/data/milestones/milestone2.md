@@ -116,21 +116,42 @@ To be implemented in the AI training module.
 
 ## **4. Actors**
 
----
-
-## **5. User Stories and Use Cases**
+## **5. Personas**
 
 ---
 
-## **6. System Architecture**
+## **6. User Stories and Use Cases**
+
+### **Use Cases**
+-  Make Annotations on a Medical Image (Whole-Slide Image - WSI)
+-  Filter and Search Datasets by Tissue Type, Organ, Pathology, etc.
+-  Choose Algorithm for a Specific Image
+-  Analyze Datasets from a Selected Institution
+-  Export Datasets
+-  Receive Notifications and Alerts About Important Events
+-  Compare Different AI Models on a Dataset
+-  Create a New Dataset from Selected Images
+-  Edit and Update Metadata of an Image
+-  Configure Custom Alerts
+-  Compare a Medical Image with Previous Cases
+-  Validate the Predictions of an AI Model
+-  Distribute Work Among Specialists
+-  Create, Use a Workflow
+-  Use an External Model Through an API
+-  Send Notifications to Specialist Doctors
+
 
 ---
 
-## **7. Domain Model**
+## **7. System Architecture**
 
 ---
 
-## **8. Mock-ups**
+## **8. Domain Model**
+
+---
+
+## **9. Mock-ups**
 
 
 
