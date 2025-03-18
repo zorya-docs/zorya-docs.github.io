@@ -21,7 +21,7 @@ const metadata = {
 };
 ---
 
-<Layout metadata={metadata}>
+<Layout metadata={metadata} milestones={[]}>
   <!-- Hero Widget ******************* -->
 
   <Hero2
@@ -36,11 +36,9 @@ const metadata = {
       },
       { text: 'Learn more', href: '#features' },
     ]}
-      image={{ src: cell, alt: "hero-image" }}
+    image={{ src: cell, alt: 'hero-image' }}
   >
-    <Fragment slot="title">
-      Bringing light to every cell
-    </Fragment>
+    <Fragment slot="title"> Bringing light to every cell </Fragment>
     <Fragment slot="subtitle">
       Zorya is a Web Platform for data lakes and exploration of artificial intelligence for Digital Pathology.
     </Fragment>
@@ -55,7 +53,7 @@ const metadata = {
         }
       </style>
     </Fragment> -->
-  </Hero>
+  </Hero2>
 
   <!-- Features2 Widget ************** -->
   <Features2
@@ -99,7 +97,7 @@ const metadata = {
       // },
     ]}
   > -->
-    <!-- <Fragment slot="bg">
+  <!-- <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
   </Features2> -->
@@ -114,19 +112,17 @@ const metadata = {
     items={[
       {
         title: 'Store diverse medical imaging datasets',
-        description:
-          'Involving the creation of concepts like datasets, pathology, and AI models.',
+        description: 'Involving the creation of concepts like datasets, pathology, and AI models.',
         icon: 'tabler:database',
       },
       {
-        title: 'A web-based user-friendly dashboard ',
-        description: 'For data exploration and algorithm development.',
+        title: 'Workflow improvement',
+        description: ' Facilitating automatic task distribution among specialists.',
         icon: 'tabler:picture-in-picture',
       },
       {
         title: 'Matchmaking algorithms',
-        description:
-          'For specific Digital Pathology images.',
+        description: 'For specific Digital Pathology images.',
         icon: 'tabler:puzzle',
       },
       {
