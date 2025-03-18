@@ -16,10 +16,9 @@
 - Para adicionar uma **collection**, que é a pasta src/data/meetings, têm que escrever como fiz no ficheiro `config.ts`, isto serve para podermos usar os ficheiros .md
 - Para ver como usar a collection, no ficheiro de cada minuta e da lista tem lá um exemplo
 - Para editarem certas coisas precisam de alterar o ficheiro config.yaml (para editarem o titulo por exemplo)
-- Para quem é noob e n saiba, ctrl+p no vscode dá para pesquisar por nome de ficheiro !!!!!
+- Informação útil: ctrl+P pesquisa pelo nome do ficheiro no vscode o que ajuda bastante neste tipo de projetos que contêm imensos ficheiros.
 
-**O que falta?**
-- adicionar fotos
+
 
 ## Getting started
 
