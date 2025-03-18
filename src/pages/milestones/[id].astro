@@ -30,7 +30,7 @@ export async function getStaticPaths() {
 <Layout metadata={{ title: `Milestone: ${milestone.data.title}` }} milestones={milestones}>
   <div class="flex max-w-5xl mx-auto mt-6 p-4 bg-muted/80 dark:bg-muted/90 rounded-xl transition-all min-h-screen">
     <!-- Sidebar -->
-    <aside class="w-1/5 p-4 sticky top-0 h-screen overflow-auto">
+    <aside class="w-1/5 p-4 sticky top-[4rem] h-[calc(100vh-4rem)] overflow-y-auto">
       <h2 class="text-lg text-customGreen2 font-bold mb-4">Milestones</h2>
       <ul>
         {
@@ -45,7 +45,7 @@ export async function getStaticPaths() {
                   {milestone.data.topics.map((topic) => (
                     <li class="mb-1">
                       <a
-                        href={`#${topic.replace(/\s+/g, '-').toLowerCase()}`}
+                        href={`/milestones/${milestone.id}#${topic.replace(/\s+/g, '-').toLowerCase()}`}
                         class="text-sm dark:text-green1 hover:underline"
                       >
                         {topic}
