@@ -12,7 +12,7 @@ Carolina, Diogo, João, Raquel, Henrique, Supervisor Luís Bastião
 **Absentees:**  
 Supervisor Carlos Costa
 
-## Workflow:
+## Agenda:
 1. Request feedback on Figma design
 2. Other topics
 

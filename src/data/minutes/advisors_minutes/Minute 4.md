@@ -12,7 +12,7 @@ Carolina, Diogo, João, Raquel, Henrique, Supervisors (Luís Bastião and Carlos
 **Absentees:**  
 
 
-## Workflow:
+## Agenda:
 1. Presentation of requirements (shared via Slack if time is limited)
 2. Architecture review and feedback request
 3. State of the art
