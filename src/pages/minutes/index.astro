@@ -14,68 +14,49 @@ const groupMinutes = (await getCollection('group_minutes')).sort((a, b) => parse
 
 <Layout metadata={metadata} milestones={[]}>
   <HeroText title="Minutes" />
-
-  <section class="max-w-5xl mx-auto my-9">
-    <div class="overflow-x-auto border-customGreen3 dark:border-customGreen3 rounded-md">
-      <table class="min-w-full bg-white dark:bg-gray-800 border-4 border-customGreen3 dark:border-customGreen3 shadow-lg rounded-lg border-collapse">
-        <thead>
-          <tr class="border-4 border-customGreen3 dark:border-customGreen3">
-            <th class="px-6 py-4 text-center text-xl text-blue1 font-semibold border-4 border-customGreen3 dark:border-customGreen3 w-1/2">Supervisors Minutes</th>
-            <th class="px-6 py-4 text-center text-xl text-blue1 font-semibold border-4 border-customGreen3 dark:border-customGreen3 w-1/2">Team Minutes</th>
-          </tr>
-        </thead>
-        <tbody>
-          {Array.from({ length: Math.ceil(advisoryMinutes.length / 2) }).map((_, rowIndex) => (
-            <tr class="border-4 border-customGreen3 dark:border-customGreen3">
-              {/* Supervisors Minutes (2 items per cell) */}
-              <td class="px-6 py-4 border-4 border-customGreen3 dark:border-customGreen3 w-1/2">
-                <div class="flex justify-between gap-4"> 
-                  {advisoryMinutes[rowIndex * 2] && (
-                    <a
-                      href={`/minutes/advisors_minutes/${advisoryMinutes[rowIndex * 2].id}`}
-                      class="block bg-muted/80 hover:bg-muted/90 shadow-sm hover:shadow-blue1 p-4 rounded-xl border-[3px] border-blue1 text-blue1 hover:border-blue1 hover:text-blue1 dark:border-white dark:text-white dark:hover:border-red-500 dark:hover:text-red-500 text-lg transition-all duration-300 transform hover:-translate-y-1 w-1/2"
-                    >
-                      📑 {advisoryMinutes[rowIndex * 2].data.title}
-                    </a>
-                  )}
-                  {advisoryMinutes[rowIndex * 2 + 1] && (
-                    <a
-                      href={`/minutes/advisors_minutes/${advisoryMinutes[rowIndex * 2 + 1].id}`}
-                      class="block bg-muted/80 hover:bg-muted/90 shadow-sm hover:shadow-blue1 p-4 rounded-xl border-[3px] border-blue1 text-blue1 hover:border-blue1 hover:text-blue1 dark:border-white dark:text-white dark:hover:border-red-500 dark:hover:text-red-500 text-lg transition-all duration-300 transform hover:-translate-y-1 w-1/2"
-                    >
-                      📑 {advisoryMinutes[rowIndex * 2 + 1].data.title}
-                    </a>
-                  )}
-                </div>
-              </td>
+  <section class="max-w-6xl mx-auto my-9 px-4">
+  
+    <div class="border-[4px] border-customGreen3 dark:border-customGreen3 rounded-md shadow-lg">
+      <div class="flex flex-col md:flex-row divide-y-4 md:divide-y-0 md:divide-x-4 divide-customGreen3">
         
-              {/* Team Minutes (2 items per cell) */}
-              <td class="px-6 py-4 border-4 border-customGreen3 dark:border-customGreen3 w-1/2">
-                <div class="flex justify-between gap-4"> 
-                  {groupMinutes[rowIndex * 2] && (
-                    <a
-                      href={`/minutes/group_minutes/${groupMinutes[rowIndex * 2].id}`}
-                      class="block bg-muted/80 hover:bg-muted/90 shadow-sm hover:shadow-green1 p-4 rounded-xl border-[3px] border-blue1 text-blue1 hover:border-blue1 hover:text-blue1 dark:border-white dark:text-white dark:hover:border-red-500 dark:hover:text-red-500 text-lg transition-all duration-300 transform hover:-translate-y-1 w-1/2"
-                    >
-                      📑 {groupMinutes[rowIndex * 2].data.title}
-                    </a>
-                  )}
-                  {groupMinutes[rowIndex * 2 + 1] && (
-                    <a
-                      href={`/minutes/group_minutes/${groupMinutes[rowIndex * 2 + 1].id}`}
-                      class="block bg-muted/80 hover:bg-muted/90 shadow-sm hover:shadow-green1 p-4 rounded-xl border-[3px] border-blue1 text-blue1 hover:border-blue1 hover:text-blue1 dark:border-white dark:text-white dark:hover:border-red-500 dark:hover:text-red-500 text-lg transition-all duration-300 transform hover:-translate-y-1 w-1/2"
-                    >
-                      📑 {groupMinutes[rowIndex * 2 + 1].data.title}
-                    </a>
-                  )}
-                </div>
-              </td>
-            </tr>
+      {/* Supervisors Minutes */}
+      <div class="w-full md:w-1/2 p-4">
+        <h2 class="text-2xl font-semibold text-blue1 mb-4 text-center border-b-4 border-customGreen3 pb-2">
+          Supervisors Minutes
+        </h2>
+        <div class="flex flex-wrap gap-4 justify-start">
+          {advisoryMinutes.map((minute) => (
+            <a
+              href={`/minutes/advisors_minutes/${minute.id}`}
+              class="w-full sm:w-[48%] bg-muted/80 hover:bg-muted/90 shadow-sm hover:shadow-blue1 p-4 rounded-xl border-[3px] border-blue1 text-blue1 hover:border-blue1 hover:text-blue1 dark:border-white dark:text-white dark:hover:border-red-500 dark:hover:text-red-500 text-lg transition-all duration-300 transform hover:-translate-y-1"
+            >
+              📑 {minute.data.title}
+            </a>
           ))}
-        </tbody>
-        
-        
-      </table>
+        </div>
+      </div>
+
+      {/* Team Minutes */}
+      <div class="w-full md:w-1/2 p-4">
+        <h2 class="text-2xl font-semibold text-blue1 mb-4 text-center border-b-4 border-customGreen3 pb-2">
+          Team Minutes
+        </h2>
+        <div class="flex flex-wrap gap-4 justify-start">
+          {groupMinutes.map((minute) => (
+            <a
+              href={`/minutes/group_minutes/${minute.id}`}
+              class="w-full sm:w-[48%] bg-muted/80 hover:bg-muted/90 shadow-sm hover:shadow-green1 p-4 rounded-xl border-[3px] border-blue1 text-blue1 hover:border-blue1 hover:text-blue1 dark:border-white dark:text-white dark:hover:border-red-500 dark:hover:text-red-500 text-lg transition-all duration-300 transform hover:-translate-y-1"
+            >
+              📑 {minute.data.title}
+            </a>
+          ))}
+        </div>
+      </div>
+
+  
+      </div>
     </div>
   </section>
+  
+  
 </Layout>
