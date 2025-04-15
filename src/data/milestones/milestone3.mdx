@@ -1,0 +1,51 @@
+---
+id: 'milestone3'  
+title: 'MS 3 - Construction'
+iframe_url: "https://docs.google.com/presentation/d/e/2PACX-1vTViUtGXZSHUQ7QfvflE5G-knFbPWTl7lxcnf0nucxh0OySleJDvJ20HI3Y4fd84eimqyJiUZm9xqAZ/pubembed?start=false&loop=false&delayms=3000"
+pdf_url: '/milestones/milestone3.pdf'
+topics:
+  - 'Context and Goals'
+  - 'Calendar'
+  - 'System Architecture'
+  - 'What are we doing?'
+  - 'Database changes'
+  - 'Next Steps'
+
+
+---
+
+import arquitetura from '~/assets/images/arquitetura2.png';
+
+#### Date: 08/04/2025
+
+## **Context and Goals**
+This project presents a digital pathology platform designed specifically for doctors and researchers. Its core functionalities include the upload and visualization of DICOM images, enabling efficient analysis of medical imaging data. The platform incorporates automatic work distribution and task assignment through a worklist system, optimizing the workflow and enhancing productivity. Integrated AI capabilities allow for the execution of intelligent actions, such as automated AI-assisted annotations, which support users in identifying and marking relevant features within medical images. Overall, the system aims to streamline the diagnostic process, improve accuracy, and reduce the workload of medical professionals through the use of advanced digital and AI tools.
+
+## **Calendar**
+There were a few changes made to the project timeline. New tasks were added, including tools integration (Dicoogle and Cornerstone), studies endpoint consumption on the frontend, and presentation planning (previously called “Milestone 3”). Additionally, the API development task was updated to include “Studies,” and the frontend development task now specifies pages, viewer, and algorithms. All other tasks remained unchanged.
+
+## **System Architecture**
+<img src={arquitetura.src} alt="System Architecture" style="width: 100%; margin-top: 2rem; margin-bottom: 2rem;"/>
+
+Several important changes were made to the system architecture:
+
+1. **Client Layer renamed to Reverse Proxy**:  
+   The previous “Client Layer” was renamed to “Reverse Proxy”, more accurately reflecting its role in handling requests from external API clients and web browsers before they reach the backend.
+
+2. **Dicoogle separated from Integration Layer**:  
+   Dicoogle is now shown as its own distinct module, rather than being grouped under the general “Integration Layer”. This emphasizes its specific purpose as a DICOM interface and PACS system, and highlights its importance in the architecture.
+
+3. **QuPath moved outside main architecture blocks**:  
+   QuPath was extracted from the previous "Integration Layer" and is now displayed separately, indicating it interacts with the system but is not tightly coupled within the core backend infrastructure.
+
+These updates improve clarity by explicitly identifying responsibilities of each component and separating key tools (like Dicoogle and QuPath) that have distinct functionalities.
+
+## **What are we doing?**
+Currently, the team is focusing on both frontend and backend development. On the frontend, work includes implementing the viewer, creating the Algorithms page, defining and starting the implementation of the Actions page, and improving the Studies page. 
+On the backend side, the main task is the implementation of the Dicoogle API.
+
+## **Database changes**
+The database structure has been updated. The previous hierarchy — **Datasets → Studies → Images** — was replaced. The new and correct structure is now **Studies → Series → Images**, aligning more accurately with the DICOM standard and ensuring better organization and scalability of the data model.
+
+## **Next Steps**
+The next steps for the project include resolving issues with the viewer implementation and continuing the development of key frontend features, such as completing the Actions and Algorithms pages. On the integration side, QuPath and GrandQC will be incorporated into the workflow. Additionally, a custom Dicoogle plugin will be developed to automate indexing, extract metadata, and apply models, enhancing the platform’s overall functionality and automation.
