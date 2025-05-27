@@ -15,6 +15,7 @@ import cell from '~/assets/images/cell.svg';
 // import ola2 from '~/assets/images/ola2.jpg';
 
 import { YouTube } from 'astro-embed';
+import Video from '~/components/widgets/Video.astro';
 
 const metadata = {
   title: 'Home',
@@ -36,9 +37,11 @@ const metadata = {
       },
       { text: 'Learn more', href: '#features' },
     ]}
-    image={{ src: cell, alt: 'hero-image' }}
+      image={{ src: cell, alt: "hero-image" }}
   >
-    <Fragment slot="title"> Bringing light to every cell </Fragment>
+    <Fragment slot="title">
+      Bringing light to every cell
+    </Fragment>
     <Fragment slot="subtitle">
       Zorya is a Web Platform for data lakes and exploration of artificial intelligence for Digital Pathology.
     </Fragment>
@@ -53,56 +56,24 @@ const metadata = {
         }
       </style>
     </Fragment> -->
-  </Hero2>
+  </Hero>
 
   <!-- Features2 Widget ************** -->
   <Features2
     title="Overview"
-    subtitle="This project aims to develop a web platform that will support a data lake for medical imaging and enable federated learning across multiple institutions. It aims to simplify the workflow for researchers working with high-resolution scanned slides, improve content discovery, and facilitate collaborative algorithm development."
+    subtitle="This project aims to develop a web platform that will support a data lake for medical imaging and enable federated learning across multiple institutions. It aims to simplify the workflow for researchers working with high-resolution scanned slides, improve content discovery, and facilitate algorithm exploration."
   >
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
   </Features2>
 
-  <!-- Features2 Widget ************** -->
+    <!-- Video Widget ***************** -->
+    <Video
+      src="https://drive.google.com/file/d/1wp892LxCN4xHqYf7hjPOigakZfR0DDCZ/view"
+      title="Zorya Platform Overview"
+    />
 
-  <!-- <Features2
-    title="Our Goals"
-    subtitle="We offer a wide range of features"
-    items={[
-      {
-        title: 'IMAGE MANAGING',
-        description:
-          'Image storage, processing and identification service.',
-        icon: 'flat-color-icons:document',
-      },
-      {
-        title: 'PERSONALIZED CATALOGING',
-        description:
-          'Easy access to resources based on user preferences.',
-        icon: 'flat-color-icons:template',
-      },
-      {
-        title: 'DATA PRIVACY',
-        description:
-          'Assure the concealment of sensitive information through federated learning.',
-        icon: 'flat-color-icons:voice-presentation',
-      },
-      // {
-      //   title: 'INTUITIVE INTERFACE',
-      //   description:
-      //     'Easy-to-understand UI aimed at doctors.',
-      //   icon: 'flat-color-icons:template',
-      // },
-    ]}
-  > -->
-  <!-- <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Features2> -->
-
-  <!-- Features Widget *************** -->
 
   <Features
     id="features"
@@ -112,22 +83,24 @@ const metadata = {
     items={[
       {
         title: 'Store diverse medical imaging datasets',
-        description: 'Involving the creation of concepts like datasets, pathology, and AI models.',
+        description:
+          'Involving the creation of concepts like studies, pathology, and AI models.',
         icon: 'tabler:database',
       },
       {
-        title: 'Workflow improvement',
-        description: ' Facilitating automatic task distribution among specialists.',
+        title: 'A web-based user-friendly dashboard ',
+        description: 'For data and algorithm exploration.',
         icon: 'tabler:picture-in-picture',
       },
       {
-        title: 'Matchmaking algorithms',
-        description: 'For specific Digital Pathology images.',
+        title: 'A plethora of algorithms',
+        description:
+          'For specific Digital Pathology images.',
         icon: 'tabler:puzzle',
       },
       {
-        title: 'Notifications and alerts for important events updates',
-        description: 'Updates on new datasets, AI models, and pathology.',
+        title: 'Notifications for real-time events',
+        description: 'Updates on assigned work, AI model results and quality control.',
         icon: 'tabler:bell',
       },
       // {
