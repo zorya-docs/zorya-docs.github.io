@@ -158,12 +158,6 @@ To be implemented in the AI training module.
 - #### Doctor / Researcher  
   A medical specialist with expertise in a specific field. They can annotate medical images, create and execute workflows, and run AI models for analysis.
 
-- #### Team Leader  
-  A senior Doctor/Researcher responsible for overseeing projects and assigning tasks to specialists based on their expertise.
-
-- #### Admin  
-  Oversees platform administration, managing user accounts, permissions, and system access.
-
 - #### Data Manager  
   A technical expert responsible for uploading and managing medical images from the backend, ensuring data integrity and availability.
 
@@ -233,170 +227,78 @@ To be implemented in the AI training module.
   - Limited visibility into medical-specific workflows, making it difficult to understand clinical nuances.  
   - Needs to keep track of system logs, errors, and user activity without overwhelming himself with unnecessary technical details.  
 
----
-
-## **Scenarios**
-
-- #### Scenario 1: Dr. Ana Rodrigues – Efficient Lung Disease Diagnosis  
-  **Context:**  
-  Dr. Ana Rodrigues, a pulmonology specialist, is reviewing whole-slide images from a new dataset on lung cancer biopsies. She wants to quickly annotate key regions of interest and compare them with previous cases.  
-
-  **Steps:**  
-  - Logs into Zorya and searches for lung pathology datasets.  
-  - Uses filters to refine results based on tissue type, pathology, and AI model predictions.  
-  - Opens a whole-slide image in the viewer and zooms into suspicious regions.  
-  - Uses the annotation tool to highlight abnormalities and add comments.  
-  - Analyzes the current case with previously annotated cases for validation.  
-  - Saves annotations, which are automatically stored in the database.  
-
-  **Expected Outcome:**  
-  Dr. Ana efficiently navigates through lung pathology datasets, making precise annotations.  
-
-
-- #### Scenario 2: Dr. Miguel Almeida – Distributing Cases to Specialists  
-  **Context:**  
-  As the head of the Medical Imaging Department, Dr. Miguel Almeida needs to allocate pathology datasets to the right specialists, ensuring efficient workflow across different research teams.  
-
-  **Steps:**  
-  - Logs into Zorya and accesses the dataset management dashboard.  
-  - Uses the categorization system to filter medical images by organ, tissue type, and pathology.  
-  - Identifies a set of lung pathology cases that require further analysis.  
-  - Assigns these cases to Dr. Ana Rodrigues, the pulmonology specialist.  
-  - Sends a notification with dataset access details.  
-
-  **Expected Outcome:**  
-  Dr. Miguel successfully distributes cases based on specialist expertise, ensuring that each dataset is reviewed by the most qualified medical professional.  
-
-
-- #### Scenario 3: Dr. Ana Rodrigues – Validating AI Model Predictions  
-  **Context:**  
-  Dr. Ana wants to verify the performance of an AI model in detecting lung diseases in pathology images.  
-
-  **Steps:**  
-  - Selects a pre-trained AI model from the platform.  
-  - Runs the model on a dataset of lung biopsy slides.  
-  - Reviews the automated annotations and predictions made by the AI.  
-  - Uses the annotation tool to correct or validate AI-detected abnormalities. *(Do we perform this step, or do we only add human annotations and categorize them separately as AI annotations and human annotations?)*  
-  - Submits feedback on AI performance for further improvements.  
-
-  **Expected Outcome:**  
-  Dr. Ana ensures that the AI model is accurately detecting lung diseases, contributing to model refinement and improved diagnostic reliability.  
-
-
-- #### Scenario 4: Creating a Workflow  
-  **Context:**  
-  Dr. Miguel Almeida needs to set up a structured workflow to manage pathology case analysis efficiently. He wants to ensure cases are categorized, assigned to the right specialists, and analyzed using AI support.  
-
-  **Steps:**  
-  - Sets up workflow parameters, including tissue type, pathology type, priority level, and assigned specialists.  
-  - Automatically assigns cases using platform filters based on expertise and workload.  
-  - Uses AI models to generate preliminary annotations.  
-  - Stores final annotations, marking cases as complete for future reference.  
-
-  **Expected Outcome:**  
-  Dr. Miguel ensures an organized workflow, optimizing case distribution, AI-assisted analysis, and collaboration within the research team.  
-
----
-
 ## **User Stories**
 
-### <ins>**User Story 1**</ins>  
-  **As** Dr. Ana Rodrigues, a pulmonology specialist,  
-  **I want to** annotate key regions in whole-slide images and compare them with previous cases,  
-  **So that I** can efficiently diagnose lung diseases with AI-assisted validation.  
+### <ins>**View and Evaluate AI Models**</ins>  
+**As** a user,  
+**I want to** view information regarding different models,  
+**So that I** can decide which ones better qualify for the image I'm working on.  
 
-  **Acceptance Criteria:**
-  - Dr. Ana can search and filter lung pathology datasets by tissue type, pathology, and AI predictions.
-  - The system provides an intuitive viewer to zoom into suspicious regions.
-  - Annotations can be added, edited, and saved.
-  - AI model suggestions are clearly labeled.
-  - Previous annotated cases can be accessed for comparison.
+**Acceptance Criteria:**
+- The user can access the AI algorithms page, with detailed info on every model.
+- They can then read the models’ descriptions, as well as other important factors to aid in their choice.
+- They can also see the algorithm's input description and output, so the user can know what images work with the model and what to expect as results after running it.
 
-### <ins>**User Story 2**</ins>  
-  **As** Dr. Miguel Almeida, the head of the Medical Imaging Department,  
-  **I want to** efficiently assign pathology datasets to specialists based on organ, tissue type, and pathology,  
-  **So that I** can streamline workflow and ensure cases are reviewed by the most qualified professionals.  
+### <ins>**Study & Image Navigation with Viewer**</ins>  
+**As** a user,  
+**I want to** select a study, series, and image to view its contents,  
+**So that I** can visually inspect the image and review its metadata.  
 
-  **Acceptance Criteria:**
-  - Dr. Miguel can access a dataset management dashboard.
-  - The system allows filtering medical images by organ, tissue type, and pathology.
-  - Cases can be assigned to specific specialists.
-  - Assigned specialists receive notifications with dataset access details.
+**Acceptance Criteria:**
+- The user can browse studies and their corresponding series and images.
+- Upon selecting an image, the viewer loads and displays it clearly.
+- Metadata associated with the image (e.g., filename, patient gender, birth date, ...) is shown alongside the viewer.
 
-### <ins>**User Story 3**</ins>  
-  **As** Dr. Ana, a pulmonology specialist,  
-  **I want to** view information regarding different models  
-  **So that I** can decide which ones better qualify for COPD identification  
+### <ins>**Run AI Algorithm and View Results**</ins>  
+**As** a user,  
+**I want to** run an algorithm like BiomedParse on a selected image,  
+**So that I** can view AI-generated annotations and download a PDF with the results.  
 
-  **Acceptance Criteria:**
-  - Dr. Ana can access the models page, with detailed info on every model.
-  - She can then read the models’ descriptions, as well as other important factors to aid her in her choice.
-  - Then, she can create a workflow with the chosen models.
+**Acceptance Criteria:**
+- User selects an image and runs the BiomedParse algorithm.
+- The system displays a "Results" tab showing detected regions and associated metrics.
+- The output regions are also visually displayed in images next to the numeric results.
+- A button is available to download a PDF containing the full result summary.
 
-### <ins>**User Story 4**</ins>  
-  **As** João Alberto, an administrator of the Zorya platform,  
-  **I want to** view events and logs related to user actions (e.g., who uploaded what, who triggered what)  
-  **So that I** can monitor system usage and investigate issues  
+### <ins>**Quality Control Configuration**</ins>  
+**As** a user,  
+**I want to** customize quality control thresholds for image artifacts,  
+**So that I** can decide which images are considered faulty according to my criteria.  
 
-  **Acceptance Criteria:**
-  - João Alberto has access to server logging.
-  - The system allows filtering the logs by user, event type, and chronological order.
+**Acceptance Criteria:**
+- User can update thresholds for artifacts like folds, background, out-of-focus (OOF), etc.
+- When viewing an image, if at least one artifact count exceeds thresholds, a "Faulty" label is shown.
+- The preferences are saved and persist across sessions.
 
-### <ins>**User Story 5**</ins>  
-  **As** Dr. Ana, a pulmonology specialist,  
-  **I want to** view how accurate the information generated by my workflow is  
-  **So that I** can adapt my own analysis according to how trustworthy the workflow result was  
+### <ins>**Assign and Track Study Work**</ins>  
+**As** a user,  
+**I want to** assign or unassign studies to myself,  
+**So that I** can manage which studies I'm responsible for analyzing.  
 
-  **Acceptance Criteria:**
-  - After the workflow has finished, Dr. Ana should be able to see the combined accuracy and f1 scores of all the models included in the workflow.
- 
-### <ins>**User Story 6**</ins>  
-  **As** Dr. Miguel Almeida, the head of the Medical Imaging Department,  
-  **I want to** compare man-made annotations with computer-made ones  
-  **So that I** can evaluate the accuracy of the AI-driven annotations against expert annotations.  
+**Acceptance Criteria:**
+- The user can assign a study to themselves from the available study list.
+- The user can unassign any study they previously claimed.
+- An "Assigned Work" tab lists all studies currently assigned to the user.
 
-  **Acceptance Criteria:**
-  - Dr. Miguel can select an image, belonging to a dataset, that has both man-made and computer-made annotations.
-  - He then should be able to compare those two and take notes of the main differences.
+### <ins>**Add Notes to Image**</ins>  
+**As** a user,  
+**I want to** write findings or notes when reviewing an image,  
+**So that I** can document observations for future reference or collaboration.  
 
-### <ins>**User Story 7**</ins>  
-  **As** Dr. Maria Martins, a cardiology specialist,  
-  **I want to** receive a notification about an assigned task for a specific study or dataset and execute the task,  
-  **So that I** can efficiently complete my assigned work and contribute to the diagnosis process.  
+**Acceptance Criteria:**
+- User can open a note interface while viewing an image.
+- Notes are saved and linked to the specific image.
+- Saved notes are accessible later when revisiting the image.
 
-  **Acceptance Criteria:**
-  - Dr. Maria receives a notification when a new task is assigned.
-  - The notification includes information about the specific study or dataset.
-  - Dr. Maria can access the study or dataset from the notification.
-  - The system allows Dr. Maria to execute the task associated with the dataset (e.g., reviewing annotations, analyzing the image).
-  - Dr. Maria can update the status of the task after completion.
-  - Notifications are updated if the task is completed or if there are further steps to be taken.
+### <ins>**AI Execution Notification**</ins>  
+**As** a user,  
+**I want to** be notified when an AI algorithm I ran has finished executing,  
+**So that I** can quickly review the results without needing to manually check the status repeatedly.  
 
+**Acceptance Criteria:**
+- When the user runs an AI algorithm on an image, the system begins processing in the background.
+- Once processing is complete, the user receives a real-time or near-real-time notification.
 
----
-
-### **Use Cases**
-<img src={usecases.src} alt="Use Cases" style="width: 90%; margin-top: 2rem; margin-bottom: 2rem;"/>
-
--  Make Annotations on a Medical Image (Whole-Slide Image - WSI)
--  Filter and Search Datasets by Tissue Type, Organ, Pathology, etc.
--  Choose Algorithm for a Specific Image
--  Analyze Datasets from a Selected Institution
--  Export Datasets
--  Receive Notifications and Alerts About Important Events
--  Compare Different AI Models on a Dataset
--  Create a New Dataset from Selected Images
--  Edit and Update Metadata of an Image
--  Configure Custom Alerts
--  Compare a Medical Image with Previous Cases
--  Validate the Predictions of an AI Model
--  Distribute Work Among Specialists
--  Create, Use a Workflow
--  Use an External Model Through an API
--  Send Notifications to Specialist Doctors
-
-
----
 
 ## **System Architecture**
 <img src={arquitetura.src} alt="System Architecture" style="width: 100%; margin-top: 2rem; margin-bottom: 2rem;"/>
